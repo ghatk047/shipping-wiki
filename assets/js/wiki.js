@@ -114,15 +114,21 @@
     if (!baseW) fitBase();
     lbImg.style.width  = (baseW * scale) + 'px';
     lbImg.style.height = 'auto';
-    lbImg.style.transform = 'translate(' + originX + 'px,' + originY + 'px)';
+    lbImg.style.transform =
+      'translate(' + Math.round(originX) + 'px,' + Math.round(originY) + 'px)';
     document.getElementById('lbScale').textContent =
       Math.round(scale * 100) + '%';
   }
 
   function resetView() {
-    scale   = 1;
-    originX = 0;
-    originY = 0;
+    scale = 1;
+    if (!baseW) fitBase();
+    /* Centre explicitly. The image is absolutely positioned, so flex centring
+       cannot shift it sideways as its width grows during zoom. */
+    var nw = lbImg.naturalWidth  || 1600;
+    var nh = lbImg.naturalHeight || 900;
+    originX = Math.round((overlay.clientWidth  - baseW) / 2);
+    originY = Math.round((overlay.clientHeight - baseW * (nh / nw)) / 2);
     updateTransform();
   }
 
@@ -135,12 +141,13 @@
     var next = Math.min(MAX_SCALE, Math.max(MIN_SCALE, scale + delta));
     if (next === scale) return;
     /* Adjust origin so the focal point stays fixed */
-    var ratio  = next / scale;
-    var imgX   = cx - overlay.getBoundingClientRect().left;
-    var imgY   = cy - overlay.getBoundingClientRect().top;
-    originX    = imgX - ratio * (imgX - originX);
-    originY    = imgY - ratio * (imgY - originY);
-    scale      = next;
+    var ratio = next / scale;
+    var box   = overlay.getBoundingClientRect();
+    var imgX  = cx - box.left;
+    var imgY  = cy - box.top;
+    originX   = imgX - ratio * (imgX - originX);
+    originY   = imgY - ratio * (imgY - originY);
+    scale     = next;
     updateTransform();
   }
 
