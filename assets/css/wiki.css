@@ -257,7 +257,8 @@ a:hover { text-decoration: underline; }
 
 /* ── BPMN diagram ── */
 .diagram-wrap { text-align: center; padding: 12px 0; }
-.diagram-wrap img { max-width: 100%; border: 1px solid #e2e8f0;
+.diagram-wrap img { max-width: 100%; width: 100%; height: auto;
+                    border: 1px solid #e2e8f0;
                     border-radius: 6px; cursor: zoom-in; }
 .diagram-wrap p { font-size: 12px; color: #94a3b8; margin-top: 6px; }
 
@@ -280,9 +281,12 @@ a:hover { text-decoration: underline; }
 }
 #lightbox.active { display: flex; }
 #lightboxImg {
-  max-width: 90vw; max-height: 90vh; border-radius: 4px;
+  max-width: 92vw; max-height: 92vh; border-radius: 4px;
   object-fit: contain; cursor: zoom-in; user-select: none;
-  will-change: transform; transform-origin: 0 0;
+  transform-origin: 0 0;
+  /* No will-change / no scale() transform: both force the browser to cache one
+     raster and magnify it, which blurs SVG. Zoom is applied to layout width. */
+  image-rendering: auto;
 }
 #lbControls {
   position: absolute; top: 12px; right: 12px;
