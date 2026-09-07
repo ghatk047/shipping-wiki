@@ -83,7 +83,7 @@
   var lastDist = 0;          /* for pinch-zoom */
 
   var MIN_SCALE = 0.5;
-  var MAX_SCALE = 8;
+  var MAX_SCALE = 16;   /* vector: no upper limit worth respecting */
   var ZOOM_STEP = 0.25;
 
   /* ── Controls bar ── */
@@ -97,9 +97,24 @@
     '<button id="lbClose"   title="Close (Esc)">&#x2715;</button>';
   overlay.appendChild(controls);
 
+  /* Base fit size, captured once per image. Zoom changes LAYOUT width so the
+     browser re-rasterises SVG at the new size; transform handles pan only.
+     Using transform: scale() here would magnify a cached bitmap and blur. */
+  var baseW = 0;
+
+  function fitBase() {
+    var nw = lbImg.naturalWidth  || 1600;
+    var nh = lbImg.naturalHeight || 900;
+    var vw = overlay.clientWidth  * 0.92;
+    var vh = overlay.clientHeight * 0.92;
+    baseW = nw * Math.min(vw / nw, vh / nh, 1);
+  }
+
   function updateTransform() {
-    lbImg.style.transform =
-      'translate(' + originX + 'px,' + originY + 'px) scale(' + scale + ')';
+    if (!baseW) fitBase();
+    lbImg.style.width  = (baseW * scale) + 'px';
+    lbImg.style.height = 'auto';
+    lbImg.style.transform = 'translate(' + originX + 'px,' + originY + 'px)';
     document.getElementById('lbScale').textContent =
       Math.round(scale * 100) + '%';
   }
@@ -131,8 +146,14 @@
 
   /* Open */
   function openLightbox(src, title) {
+    baseW = 0;
+    lbImg.style.maxWidth  = 'none';   /* CSS caps would fight the width-based zoom */
+    lbImg.style.maxHeight = 'none';
+    lbImg.style.width     = '';
+    lbImg.onload = function () { fitBase(); resetView(); };
     lbImg.src = src;
     lbImg.alt = title || '';
+    if (lbImg.complete) { fitBase(); }
     resetView();
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
