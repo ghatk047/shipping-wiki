@@ -276,11 +276,12 @@ a:hover { text-decoration: underline; }
 /* ── Lightbox overlay ── */
 #lightbox {
   display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.88);
-  z-index: 999; align-items: center; justify-content: center;
-  overflow: hidden;
+  z-index: 999; overflow: hidden;
 }
-#lightbox.active { display: flex; }
+#lightbox.active { display: block; }
+
 #lightboxImg {
+  position: absolute; top: 0; left: 0;
   max-width: 92vw; max-height: 92vh; border-radius: 4px;
   object-fit: contain; cursor: zoom-in; user-select: none;
   transform-origin: 0 0;
