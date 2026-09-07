@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VO-NP-03 &mdash; Fuel Planning and Bunker Strategy with Slow Steaming Optimisation &mdash; Maersk Shipping Process Wiki</title>
+  <link rel="stylesheet" href="../../../assets/css/wiki.css">
+</head>
+<body>
+  <div class="topbar">
+    <button id="topbarToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <a class="topbar-brand" href="../../../index.html">Maersk Shipping Process Wiki</a>
+    <span class="topbar-sub">Vessel Operations &amp; Navigation &rsaquo; Voyage Planning &amp; Navigation</span>
+    <span class="topbar-spacer"></span>
+  </div>
+  <div class="wiki-layout">
+    <nav id="sidebar">
+      <button id="sidebarToggle" title="Collapse sidebar">&#9664;</button>
+<nav class="wiki-nav">
+<div class="nav-domain open">
+  <a class="nav-l1" href="../../../vessel-operations/index.html"><span class="nav-l1-icon">🚢</span><span class="nav-org-dot ops"></span><span class="nav-l1-text">Vessel Operations &amp; Navigation</span><span class="nav-l1-caret">&#9654;</span></a>
+  <div class="nav-l2-list">
+    <div class="nav-l2-group open">
+      <a class="nav-l2-title" href="../../../vessel-operations/voyage-planning/index.html">Voyage Planning &amp; Navigation</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../vessel-operations/voyage-planning/vo-np-01/index.html">VO-NP-01 &mdash; Pre-Voyage Route Optimisation and Weather Routing</a>
+        <a class="nav-l3" href="../../../vessel-operations/voyage-planning/vo-np-02/index.html">VO-NP-02 &mdash; Port Call Planning and Berth Scheduling</a>
+        <a class="nav-l3 active" href="../../../vessel-operations/voyage-planning/vo-np-03/index.html">VO-NP-03 &mdash; Fuel Planning and Bunker Strategy with Slow Steamin…</a>
+        <a class="nav-l3" href="../../../vessel-operations/voyage-planning/vo-np-04/index.html">VO-NP-04 &mdash; Stability Calculation and Trim Optimisation Pre-Loa…</a>
+        <a class="nav-l3" href="../../../vessel-operations/voyage-planning/vo-np-05/index.html">VO-NP-05 &mdash; ECDIS Chart Updates and Passage Plan Approval</a>
+        <a class="nav-l3" href="../../../vessel-operations/voyage-planning/vo-np-06/index.html">VO-NP-06 &mdash; Restricted Waters and Canal Transit Management</a>
+        <a class="nav-l3" href="../../../vessel-operations/voyage-planning/vo-np-07/index.html">VO-NP-07 &mdash; Deviation and Emergency Diversion Management</a>
+        <a class="nav-l3" href="../../../vessel-operations/voyage-planning/vo-np-08/index.html">VO-NP-08 &mdash; Voyage Performance Reporting and Speed Optimisation</a>
+      </div>
+    </div>
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../vessel-operations/deck-bridge-operations/index.html">Deck and Bridge Operations</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../vessel-operations/deck-bridge-operations/vo-dc-01/index.html">VO-DC-01 &mdash; Bridge Watchkeeping and COLREGS Compliance</a>
+        <a class="nav-l3" href="../../../vessel-operations/deck-bridge-operations/vo-dc-02/index.html">VO-DC-02 &mdash; Mooring, Unmooring and Anchor Operations</a>
+        <a class="nav-l3" href="../../../vessel-operations/deck-bridge-operations/vo-dc-03/index.html">VO-DC-03 &mdash; Pilot Boarding and Disembarkation Management</a>
+        <a class="nav-l3" href="../../../vessel-operations/deck-bridge-operations/vo-dc-04/index.html">VO-DC-04 &mdash; AIS Reporting and LRIT Vessel Tracking</a>
+        <a class="nav-l3" href="../../../vessel-operations/deck-bridge-operations/vo-dc-05/index.html">VO-DC-05 &mdash; Vessel Security Alert System and ISPS Compliance</a>
+        <a class="nav-l3" href="../../../vessel-operations/deck-bridge-operations/vo-dc-06/index.html">VO-DC-06 &mdash; Fire, Flooding and Emergency Response Drills</a>
+        <a class="nav-l3" href="../../../vessel-operations/deck-bridge-operations/vo-dc-07/index.html">VO-DC-07 &mdash; Officer of the Watch Handover Procedures</a>
+        <a class="nav-l3" href="../../../vessel-operations/deck-bridge-operations/vo-dc-08/index.html">VO-DC-08 &mdash; Search and Rescue Coordination</a>
+        <a class="nav-l3" href="../../../vessel-operations/deck-bridge-operations/vo-dc-09/index.html">VO-DC-09 &mdash; Medical Emergency Management at Sea</a>
+        <a class="nav-l3" href="../../../vessel-operations/deck-bridge-operations/vo-dc-10/index.html">VO-DC-10 &mdash; Voyage Log and Official Logbook Maintenance</a>
+      </div>
+    </div>
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../vessel-operations/engine-room/index.html">Engine Room and Technical Operations</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../vessel-operations/engine-room/vo-en-01/index.html">VO-EN-01 &mdash; Main Engine Watch and Performance Monitoring</a>
+        <a class="nav-l3" href="../../../vessel-operations/engine-room/vo-en-02/index.html">VO-EN-02 &mdash; Fuel Oil Management and Bunkering Operations</a>
+        <a class="nav-l3" href="../../../vessel-operations/engine-room/vo-en-03/index.html">VO-EN-03 &mdash; Ballast Water Management and BWM Convention Complia…</a>
+        <a class="nav-l3" href="../../../vessel-operations/engine-room/vo-en-04/index.html">VO-EN-04 &mdash; Waste Management and MARPOL Annex I to VI Compliance</a>
+        <a class="nav-l3" href="../../../vessel-operations/engine-room/vo-en-05/index.html">VO-EN-05 &mdash; Auxiliary Systems Operation for Generators, Compres…</a>
+        <a class="nav-l3" href="../../../vessel-operations/engine-room/vo-en-06/index.html">VO-EN-06 &mdash; Engine Room Emergency Procedures</a>
+        <a class="nav-l3" href="../../../vessel-operations/engine-room/vo-en-07/index.html">VO-EN-07 &mdash; Lubrication Oil Analysis and Condition Monitoring</a>
+        <a class="nav-l3" href="../../../vessel-operations/engine-room/vo-en-08/index.html">VO-EN-08 &mdash; Shaft Generator and Power Management Optimisation</a>
+        <a class="nav-l3" href="../../../vessel-operations/engine-room/vo-en-09/index.html">VO-EN-09 &mdash; Scrubber Operation and Exhaust Gas Cleaning</a>
+        <a class="nav-l3" href="../../../vessel-operations/engine-room/vo-en-10/index.html">VO-EN-10 &mdash; Green Methanol and Alternative Fuel Operation</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="nav-domain">
+  <a class="nav-l1" href="../../../container-terminal/index.html"><span class="nav-l1-icon">🏗</span><span class="nav-org-dot ops"></span><span class="nav-l1-text">Container &amp; Terminal Management</span><span class="nav-l1-caret">&#9654;</span></a>
+  <div class="nav-l2-list">
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../container-terminal/terminal-operating-system/index.html">Terminal Operating System Operations</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../container-terminal/terminal-operating-system/cm-tos-01/index.html">CM-TOS-01 &mdash; Vessel Arrival Planning and Berth Allocation in Nav…</a>
+        <a class="nav-l3" href="../../../container-terminal/terminal-operating-system/cm-tos-02/index.html">CM-TOS-02 &mdash; Yard Planning and Block Allocation</a>
+        <a class="nav-l3" href="../../../container-terminal/terminal-operating-system/cm-tos-03/index.html">CM-TOS-03 &mdash; Quay Crane Work Queue and Vessel Stowage Sequencing</a>
+        <a class="nav-l3" href="../../../container-terminal/terminal-operating-system/cm-tos-04/index.html">CM-TOS-04 &mdash; Gate-In and Gate-Out Container Processing</a>
+        <a class="nav-l3" href="../../../container-terminal/terminal-operating-system/cm-tos-05/index.html">CM-TOS-05 &mdash; Rail and Truck Interchange at Terminal</a>
+        <a class="nav-l3" href="../../../container-terminal/terminal-operating-system/cm-tos-06/index.html">CM-TOS-06 &mdash; Reefer Container Monitoring and Temperature Managem…</a>
+        <a class="nav-l3" href="../../../container-terminal/terminal-operating-system/cm-tos-07/index.html">CM-TOS-07 &mdash; Dangerous Goods Yard Segregation and Compliance</a>
+        <a class="nav-l3" href="../../../container-terminal/terminal-operating-system/cm-tos-08/index.html">CM-TOS-08 &mdash; Terminal KPI Reporting for Crane Moves Per Hour and…</a>
+      </div>
+    </div>
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../container-terminal/cargo-planning/index.html">Cargo Planning and Stowage</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../container-terminal/cargo-planning/cm-cp-01/index.html">CM-CP-01 &mdash; Pre-Stow Planning and Bay Plan Creation</a>
+        <a class="nav-l3" href="../../../container-terminal/cargo-planning/cm-cp-02/index.html">CM-CP-02 &mdash; Dangerous Goods Segregation and IMDG Compliance</a>
+        <a class="nav-l3" href="../../../container-terminal/cargo-planning/cm-cp-03/index.html">CM-CP-03 &mdash; VGM Verification and Weight Accuracy Management</a>
+        <a class="nav-l3" href="../../../container-terminal/cargo-planning/cm-cp-04/index.html">CM-CP-04 &mdash; Out of Gauge Cargo Stowage Planning</a>
+        <a class="nav-l3" href="../../../container-terminal/cargo-planning/cm-cp-05/index.html">CM-CP-05 &mdash; Reefer Stowage and Power Point Allocation</a>
+        <a class="nav-l3" href="../../../container-terminal/cargo-planning/cm-cp-06/index.html">CM-CP-06 &mdash; Load and Discharge List Generation and Stevedore In…</a>
+        <a class="nav-l3" href="../../../container-terminal/cargo-planning/cm-cp-07/index.html">CM-CP-07 &mdash; Vessel Stability Calculation and Trim Approval</a>
+        <a class="nav-l3" href="../../../container-terminal/cargo-planning/cm-cp-08/index.html">CM-CP-08 &mdash; Hatch Sequence Optimisation and Port Rotation Plann…</a>
+      </div>
+    </div>
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../container-terminal/container-equipment/index.html">Container Equipment Management</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../container-terminal/container-equipment/cm-eq-01/index.html">CM-EQ-01 &mdash; Container Fleet Repositioning and Empty Management</a>
+        <a class="nav-l3" href="../../../container-terminal/container-equipment/cm-eq-02/index.html">CM-EQ-02 &mdash; Container Inspection and Damage Assessment</a>
+        <a class="nav-l3" href="../../../container-terminal/container-equipment/cm-eq-03/index.html">CM-EQ-03 &mdash; Container Repair Authorisation and Depot Management</a>
+        <a class="nav-l3" href="../../../container-terminal/container-equipment/cm-eq-04/index.html">CM-EQ-04 &mdash; Reefer Pre-Trip Inspection and Certification</a>
+        <a class="nav-l3" href="../../../container-terminal/container-equipment/cm-eq-05/index.html">CM-EQ-05 &mdash; Container Leasing and Return Management</a>
+        <a class="nav-l3" href="../../../container-terminal/container-equipment/cm-eq-06/index.html">CM-EQ-06 &mdash; Container Tracking and Visibility via Remote Contai…</a>
+        <a class="nav-l3" href="../../../container-terminal/container-equipment/cm-eq-07/index.html">CM-EQ-07 &mdash; Off-Hire Container Condition Survey</a>
+        <a class="nav-l3" href="../../../container-terminal/container-equipment/cm-eq-08/index.html">CM-EQ-08 &mdash; Container Disposal and End-of-Life Management</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="nav-domain">
+  <a class="nav-l1" href="../../../freight-forwarding/index.html"><span class="nav-l1-icon">📦</span><span class="nav-org-dot flow"></span><span class="nav-l1-text">Freight Forwarding &amp; Booking</span><span class="nav-l1-caret">&#9654;</span></a>
+  <div class="nav-l2-list">
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../freight-forwarding/freight-booking/index.html">Freight Booking and Reservation</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../freight-forwarding/freight-booking/ff-bk-01/index.html">FF-BK-01 &mdash; Spot Rate Quote and Online Booking on Maersk.com</a>
+        <a class="nav-l3" href="../../../freight-forwarding/freight-booking/ff-bk-02/index.html">FF-BK-02 &mdash; Contract Rate Application and Service Contract Mana…</a>
+        <a class="nav-l3" href="../../../freight-forwarding/freight-booking/ff-bk-03/index.html">FF-BK-03 &mdash; FCL Booking Confirmation and Vessel Slot Allocation</a>
+        <a class="nav-l3" href="../../../freight-forwarding/freight-booking/ff-bk-04/index.html">FF-BK-04 &mdash; LCL Booking, Consolidation Planning and CFS Coordin…</a>
+        <a class="nav-l3" href="../../../freight-forwarding/freight-booking/ff-bk-05/index.html">FF-BK-05 &mdash; Booking Amendment and Cancellation Processing</a>
+        <a class="nav-l3" href="../../../freight-forwarding/freight-booking/ff-bk-06/index.html">FF-BK-06 &mdash; Overbooking Management and Roll-Over Procedures</a>
+        <a class="nav-l3" href="../../../freight-forwarding/freight-booking/ff-bk-07/index.html">FF-BK-07 &mdash; Special Cargo Booking for OOG, DG and Reefer</a>
+        <a class="nav-l3" href="../../../freight-forwarding/freight-booking/ff-bk-08/index.html">FF-BK-08 &mdash; Group Booking and Shipper-Owned Container Management</a>
+      </div>
+    </div>
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../freight-forwarding/shipping-documentation/index.html">Shipping Documentation</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../freight-forwarding/shipping-documentation/ff-doc-01/index.html">FF-DOC-01 &mdash; Bill of Lading Issuance and Amendment for Master an…</a>
+        <a class="nav-l3" href="../../../freight-forwarding/shipping-documentation/ff-doc-02/index.html">FF-DOC-02 &mdash; Sea Waybill Processing and Express Release</a>
+        <a class="nav-l3" href="../../../freight-forwarding/shipping-documentation/ff-doc-03/index.html">FF-DOC-03 &mdash; Cargo Manifest Compilation and Customs Transmission</a>
+        <a class="nav-l3" href="../../../freight-forwarding/shipping-documentation/ff-doc-04/index.html">FF-DOC-04 &mdash; Packing List and Certificate of Origin Verification</a>
+        <a class="nav-l3" href="../../../freight-forwarding/shipping-documentation/ff-doc-05/index.html">FF-DOC-05 &mdash; Letter of Credit Compliance and Documentary Collect…</a>
+        <a class="nav-l3" href="../../../freight-forwarding/shipping-documentation/ff-doc-06/index.html">FF-DOC-06 &mdash; Telex Release and Original B/L Surrender</a>
+        <a class="nav-l3" href="../../../freight-forwarding/shipping-documentation/ff-doc-07/index.html">FF-DOC-07 &mdash; Dangerous Goods Declaration and IMDG Documentation</a>
+        <a class="nav-l3" href="../../../freight-forwarding/shipping-documentation/ff-doc-08/index.html">FF-DOC-08 &mdash; Switch Bill of Lading Processing</a>
+      </div>
+    </div>
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../freight-forwarding/freight-tracking/index.html">Freight Tracking and Visibility</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../freight-forwarding/freight-tracking/ff-tr-01/index.html">FF-TR-01 &mdash; Container Milestone Tracking via Maersk Track and T…</a>
+        <a class="nav-l3" href="../../../freight-forwarding/freight-tracking/ff-tr-02/index.html">FF-TR-02 &mdash; Vessel AIS and Port Arrival ETA Updates</a>
+        <a class="nav-l3" href="../../../freight-forwarding/freight-tracking/ff-tr-03/index.html">FF-TR-03 &mdash; Exception Alert Management for Delays, Transshipmen…</a>
+        <a class="nav-l3" href="../../../freight-forwarding/freight-tracking/ff-tr-04/index.html">FF-TR-04 &mdash; Cargo Availability Notification</a>
+        <a class="nav-l3" href="../../../freight-forwarding/freight-tracking/ff-tr-05/index.html">FF-TR-05 &mdash; Proof of Delivery and eDelivery Order Processing</a>
+        <a class="nav-l3" href="../../../freight-forwarding/freight-tracking/ff-tr-06/index.html">FF-TR-06 &mdash; Detention and Demurrage Notification and Billing</a>
+        <a class="nav-l3" href="../../../freight-forwarding/freight-tracking/ff-tr-07/index.html">FF-TR-07 &mdash; Customer Shipment Status Reporting and API Integrat…</a>
+        <a class="nav-l3" href="../../../freight-forwarding/freight-tracking/ff-tr-08/index.html">FF-TR-08 &mdash; Carbon Emission Reporting per Shipment for Scope 3</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="nav-domain">
+  <a class="nav-l1" href="../../../customs-trade/index.html"><span class="nav-l1-icon">🛃</span><span class="nav-org-dot flow"></span><span class="nav-l1-text">Customs, Trade &amp; Documentation</span><span class="nav-l1-caret">&#9654;</span></a>
+  <div class="nav-l2-list">
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../customs-trade/export-customs/index.html">Export Customs Procedures</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../customs-trade/export-customs/cd-ex-01/index.html">CD-EX-01 &mdash; Export Classification and HS Code Assignment</a>
+        <a class="nav-l3" href="../../../customs-trade/export-customs/cd-ex-02/index.html">CD-EX-02 &mdash; Export Licence Determination and Controlled Goods S…</a>
+        <a class="nav-l3" href="../../../customs-trade/export-customs/cd-ex-03/index.html">CD-EX-03 &mdash; AES and ECS Export Declaration Filing</a>
+        <a class="nav-l3" href="../../../customs-trade/export-customs/cd-ex-04/index.html">CD-EX-04 &mdash; Cargo Manifest Pre-filing and Advance Cargo Informa…</a>
+        <a class="nav-l3" href="../../../customs-trade/export-customs/cd-ex-05/index.html">CD-EX-05 &mdash; Shipper Export Declaration and EEI Filing</a>
+        <a class="nav-l3" href="../../../customs-trade/export-customs/cd-ex-06/index.html">CD-EX-06 &mdash; Dangerous Goods Export Compliance and ADR and IMDG…</a>
+        <a class="nav-l3" href="../../../customs-trade/export-customs/cd-ex-07/index.html">CD-EX-07 &mdash; Sanctions Screening and OFAC and BIS Compliance</a>
+        <a class="nav-l3" href="../../../customs-trade/export-customs/cd-ex-08/index.html">CD-EX-08 &mdash; Export Certificate of Origin and GSP Form Management</a>
+      </div>
+    </div>
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../customs-trade/import-customs/index.html">Import Customs Procedures</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../customs-trade/import-customs/cd-im-01/index.html">CD-IM-01 &mdash; Import Entry Classification and Duty Calculation</a>
+        <a class="nav-l3" href="../../../customs-trade/import-customs/cd-im-02/index.html">CD-IM-02 &mdash; Importer Security Filing and Entry Summary</a>
+        <a class="nav-l3" href="../../../customs-trade/import-customs/cd-im-03/index.html">CD-IM-03 &mdash; Entry Bond and Continuous Bond Management</a>
+        <a class="nav-l3" href="../../../customs-trade/import-customs/cd-im-04/index.html">CD-IM-04 &mdash; Tariff Engineering and Duty Drawback Management</a>
+        <a class="nav-l3" href="../../../customs-trade/import-customs/cd-im-05/index.html">CD-IM-05 &mdash; Antidumping and Countervailing Duty Screening</a>
+        <a class="nav-l3" href="../../../customs-trade/import-customs/cd-im-06/index.html">CD-IM-06 &mdash; Customs Examination, Devanning and CET Hold Managem…</a>
+        <a class="nav-l3" href="../../../customs-trade/import-customs/cd-im-07/index.html">CD-IM-07 &mdash; Broker-of-Record Onboarding and Power of Attorney</a>
+        <a class="nav-l3" href="../../../customs-trade/import-customs/cd-im-08/index.html">CD-IM-08 &mdash; AEO and C-TPAT Trusted Trader Programme Maintenance</a>
+      </div>
+    </div>
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../customs-trade/trade-compliance/index.html">Trade Compliance and Sanctions</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../customs-trade/trade-compliance/cd-tr-01/index.html">CD-TR-01 &mdash; Denied Party Screening and OFAC and UN Sanctions Li…</a>
+        <a class="nav-l3" href="../../../customs-trade/trade-compliance/cd-tr-02/index.html">CD-TR-02 &mdash; End-User Certificate and Military Goods Screening</a>
+        <a class="nav-l3" href="../../../customs-trade/trade-compliance/cd-tr-03/index.html">CD-TR-03 &mdash; Russia, Belarus and North Korea Trade Restriction C…</a>
+        <a class="nav-l3" href="../../../customs-trade/trade-compliance/cd-tr-04/index.html">CD-TR-04 &mdash; Free Trade Agreement Qualification and Certificate…</a>
+        <a class="nav-l3" href="../../../customs-trade/trade-compliance/cd-tr-05/index.html">CD-TR-05 &mdash; INCOTERMS Allocation and Liability Transfer Documen…</a>
+        <a class="nav-l3" href="../../../customs-trade/trade-compliance/cd-tr-06/index.html">CD-TR-06 &mdash; Letters of Indemnity Issuance and Risk Assessment</a>
+        <a class="nav-l3" href="../../../customs-trade/trade-compliance/cd-tr-07/index.html">CD-TR-07 &mdash; Trade Compliance Audit and Internal Control Testing</a>
+        <a class="nav-l3" href="../../../customs-trade/trade-compliance/cd-tr-08/index.html">CD-TR-08 &mdash; Regulatory Change Management and Tariff Update Moni…</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="nav-domain">
+  <a class="nav-l1" href="../../../supply-chain/index.html"><span class="nav-l1-icon">🔗</span><span class="nav-org-dot flow"></span><span class="nav-l1-text">Supply Chain &amp; Logistics</span><span class="nav-l1-caret">&#9654;</span></a>
+  <div class="nav-l2-list">
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../supply-chain/warehousing/index.html">Warehousing Operations</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../supply-chain/warehousing/sc-wh-01/index.html">SC-WH-01 &mdash; Inbound Receiving and Put-Away</a>
+        <a class="nav-l3" href="../../../supply-chain/warehousing/sc-wh-02/index.html">SC-WH-02 &mdash; Inventory Cycle Count and Accuracy Management</a>
+        <a class="nav-l3" href="../../../supply-chain/warehousing/sc-wh-03/index.html">SC-WH-03 &mdash; Pick, Pack and Ship Order Fulfilment</a>
+        <a class="nav-l3" href="../../../supply-chain/warehousing/sc-wh-04/index.html">SC-WH-04 &mdash; Value-Added Services for Kitting, Labelling and Rep…</a>
+        <a class="nav-l3" href="../../../supply-chain/warehousing/sc-wh-05/index.html">SC-WH-05 &mdash; Returns Management and Reverse Logistics</a>
+        <a class="nav-l3" href="../../../supply-chain/warehousing/sc-wh-06/index.html">SC-WH-06 &mdash; Cold Chain Warehouse Management and Temperature Mon…</a>
+        <a class="nav-l3" href="../../../supply-chain/warehousing/sc-wh-07/index.html">SC-WH-07 &mdash; Cross-Docking and Flow-Through Operations</a>
+        <a class="nav-l3" href="../../../supply-chain/warehousing/sc-wh-08/index.html">SC-WH-08 &mdash; Warehouse Labour Planning and Productivity Manageme…</a>
+      </div>
+    </div>
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../supply-chain/land-transport/index.html">Land Transport and Inland Logistics</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../supply-chain/land-transport/sc-lnd-01/index.html">SC-LND-01 &mdash; Drayage and Port Pickup Coordination</a>
+        <a class="nav-l3" href="../../../supply-chain/land-transport/sc-lnd-02/index.html">SC-LND-02 &mdash; Over-the-Road Trucking and Carrier Management</a>
+        <a class="nav-l3" href="../../../supply-chain/land-transport/sc-lnd-03/index.html">SC-LND-03 &mdash; Rail Intermodal Booking and BNSF and UP Coordination</a>
+        <a class="nav-l3" href="../../../supply-chain/land-transport/sc-lnd-04/index.html">SC-LND-04 &mdash; Last Mile Delivery Scheduling and Route Optimisation</a>
+        <a class="nav-l3" href="../../../supply-chain/land-transport/sc-lnd-05/index.html">SC-LND-05 &mdash; White Glove and Specialised Cargo Delivery Manageme…</a>
+        <a class="nav-l3" href="../../../supply-chain/land-transport/sc-lnd-06/index.html">SC-LND-06 &mdash; Inland Container Depot Management</a>
+        <a class="nav-l3" href="../../../supply-chain/land-transport/sc-lnd-07/index.html">SC-LND-07 &mdash; Cross-Border Road Transport and Cabotage Compliance</a>
+        <a class="nav-l3" href="../../../supply-chain/land-transport/sc-lnd-08/index.html">SC-LND-08 &mdash; Fleet Visibility and TMS Track and Trace</a>
+      </div>
+    </div>
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../supply-chain/air-freight/index.html">Air Freight Operations</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../supply-chain/air-freight/sc-af-01/index.html">SC-AF-01 &mdash; Air Freight Booking and IATA AWB Issuance</a>
+        <a class="nav-l3" href="../../../supply-chain/air-freight/sc-af-02/index.html">SC-AF-02 &mdash; Air Cargo Capacity Management and Charter Operations</a>
+        <a class="nav-l3" href="../../../supply-chain/air-freight/sc-af-03/index.html">SC-AF-03 &mdash; Dangerous Goods Air Freight Compliance under IATA D…</a>
+        <a class="nav-l3" href="../../../supply-chain/air-freight/sc-af-04/index.html">SC-AF-04 &mdash; Airline Agent and Ground Handling Agent Management</a>
+        <a class="nav-l3" href="../../../supply-chain/air-freight/sc-af-05/index.html">SC-AF-05 &mdash; Air Export Screening and TSA Known Shipper Complian…</a>
+        <a class="nav-l3" href="../../../supply-chain/air-freight/sc-af-06/index.html">SC-AF-06 &mdash; Perishable and Pharma Air Cargo Management under CE…</a>
+        <a class="nav-l3" href="../../../supply-chain/air-freight/sc-af-07/index.html">SC-AF-07 &mdash; Air Freight Customs Clearance and ACI Filing</a>
+        <a class="nav-l3" href="../../../supply-chain/air-freight/sc-af-08/index.html">SC-AF-08 &mdash; Air Freight Track and Trace and Customer Notificati…</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="nav-domain">
+  <a class="nav-l1" href="../../../fleet-maintenance/index.html"><span class="nav-l1-icon">⚙</span><span class="nav-org-dot ops"></span><span class="nav-l1-text">Fleet Management &amp; Maintenance</span><span class="nav-l1-caret">&#9654;</span></a>
+  <div class="nav-l2-list">
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../fleet-maintenance/planned-maintenance/index.html">Planned Maintenance</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../fleet-maintenance/planned-maintenance/fm-pm-01/index.html">FM-PM-01 &mdash; Planned Maintenance System Schedule Management</a>
+        <a class="nav-l3" href="../../../fleet-maintenance/planned-maintenance/fm-pm-02/index.html">FM-PM-02 &mdash; Dry Dock Planning and Shipyard Tender Management</a>
+        <a class="nav-l3" href="../../../fleet-maintenance/planned-maintenance/fm-pm-03/index.html">FM-PM-03 &mdash; Hull Cleaning and Anti-Fouling Coating Management</a>
+        <a class="nav-l3" href="../../../fleet-maintenance/planned-maintenance/fm-pm-04/index.html">FM-PM-04 &mdash; Main Engine Overhaul and Top Overhaul Management</a>
+        <a class="nav-l3" href="../../../fleet-maintenance/planned-maintenance/fm-pm-05/index.html">FM-PM-05 &mdash; Classification Survey Planning for Annual, Intermed…</a>
+        <a class="nav-l3" href="../../../fleet-maintenance/planned-maintenance/fm-pm-06/index.html">FM-PM-06 &mdash; Spare Parts Inventory and Critical Spare Management</a>
+        <a class="nav-l3" href="../../../fleet-maintenance/planned-maintenance/fm-pm-07/index.html">FM-PM-07 &mdash; Condition-Based Monitoring and Predictive Maintenan…</a>
+        <a class="nav-l3" href="../../../fleet-maintenance/planned-maintenance/fm-pm-08/index.html">FM-PM-08 &mdash; Technical Defect Reporting and Close-Out Management</a>
+      </div>
+    </div>
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../fleet-maintenance/port-state-control/index.html">Port State Control and Class Compliance</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../fleet-maintenance/port-state-control/fm-ps-01/index.html">FM-PS-01 &mdash; Port State Control Inspection Preparation and Respo…</a>
+        <a class="nav-l3" href="../../../fleet-maintenance/port-state-control/fm-ps-02/index.html">FM-PS-02 &mdash; Class Renewal Survey Coordination with DNV and Lloy…</a>
+        <a class="nav-l3" href="../../../fleet-maintenance/port-state-control/fm-ps-03/index.html">FM-PS-03 &mdash; Statutory Certificate Management for Safety, Load L…</a>
+        <a class="nav-l3" href="../../../fleet-maintenance/port-state-control/fm-ps-04/index.html">FM-PS-04 &mdash; ISM Code Audit and SMS Document Control</a>
+        <a class="nav-l3" href="../../../fleet-maintenance/port-state-control/fm-ps-05/index.html">FM-PS-05 &mdash; ISPS Code Audit and Vessel Security Plan Update</a>
+        <a class="nav-l3" href="../../../fleet-maintenance/port-state-control/fm-ps-06/index.html">FM-PS-06 &mdash; MLC 2006 Labour Compliance Audit</a>
+        <a class="nav-l3" href="../../../fleet-maintenance/port-state-control/fm-ps-07/index.html">FM-PS-07 &mdash; Deficiency and Detention Management Post-PSC Inspec…</a>
+        <a class="nav-l3" href="../../../fleet-maintenance/port-state-control/fm-ps-08/index.html">FM-PS-08 &mdash; Flag State Authority Communication and Reporting</a>
+      </div>
+    </div>
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../fleet-maintenance/bunkering/index.html">Bunkering and Fuel Management</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../fleet-maintenance/bunkering/fm-bk-01/index.html">FM-BK-01 &mdash; Bunker Procurement and Tender Management</a>
+        <a class="nav-l3" href="../../../fleet-maintenance/bunkering/fm-bk-02/index.html">FM-BK-02 &mdash; Bunker Stem Planning and Quantity Calculation</a>
+        <a class="nav-l3" href="../../../fleet-maintenance/bunkering/fm-bk-03/index.html">FM-BK-03 &mdash; Bunker Delivery Note Verification and MARPOL Compli…</a>
+        <a class="nav-l3" href="../../../fleet-maintenance/bunkering/fm-bk-04/index.html">FM-BK-04 &mdash; Fuel Quality Testing and Off-Spec Bunker Management</a>
+        <a class="nav-l3" href="../../../fleet-maintenance/bunkering/fm-bk-05/index.html">FM-BK-05 &mdash; VLSFO and ULSFO Transition and Compatibility Testing</a>
+        <a class="nav-l3" href="../../../fleet-maintenance/bunkering/fm-bk-06/index.html">FM-BK-06 &mdash; Green Methanol and Alternative Fuel Bunkering</a>
+        <a class="nav-l3" href="../../../fleet-maintenance/bunkering/fm-bk-07/index.html">FM-BK-07 &mdash; Fuel Consumption Monitoring and CII Data Collection</a>
+        <a class="nav-l3" href="../../../fleet-maintenance/bunkering/fm-bk-08/index.html">FM-BK-08 &mdash; Bunker Hedging and Price Risk Management</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="nav-domain">
+  <a class="nav-l1" href="../../../revenue-management/index.html"><span class="nav-l1-icon">💲</span><span class="nav-org-dot comm"></span><span class="nav-l1-text">Revenue Management &amp; Pricing</span><span class="nav-l1-caret">&#9654;</span></a>
+  <div class="nav-l2-list">
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../revenue-management/rate-management/index.html">Rate Setting and Tariff Management</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../revenue-management/rate-management/rm-rt-01/index.html">RM-RT-01 &mdash; Spot Rate Setting and Market Intelligence</a>
+        <a class="nav-l3" href="../../../revenue-management/rate-management/rm-rt-02/index.html">RM-RT-02 &mdash; Long-Term Contract Rate Negotiation for Service Con…</a>
+        <a class="nav-l3" href="../../../revenue-management/rate-management/rm-rt-03/index.html">RM-RT-03 &mdash; FAK Rate Management</a>
+        <a class="nav-l3" href="../../../revenue-management/rate-management/rm-rt-04/index.html">RM-RT-04 &mdash; Surcharge Administration for BAF, CAF, PSS and ECA</a>
+        <a class="nav-l3" href="../../../revenue-management/rate-management/rm-rt-05/index.html">RM-RT-05 &mdash; Rate Filing and Regulatory Tariff Publication</a>
+        <a class="nav-l3" href="../../../revenue-management/rate-management/rm-rt-06/index.html">RM-RT-06 &mdash; Alliance Slot Cost Allocation under Gemini Cooperat…</a>
+        <a class="nav-l3" href="../../../revenue-management/rate-management/rm-rt-07/index.html">RM-RT-07 &mdash; Low Sulphur Bunker Adjustment Factor Calculation</a>
+        <a class="nav-l3" href="../../../revenue-management/rate-management/rm-rt-08/index.html">RM-RT-08 &mdash; Peak Season Surcharge and General Rate Increase Man…</a>
+      </div>
+    </div>
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../revenue-management/yield-management/index.html">Yield Management and Revenue Optimisation</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../revenue-management/yield-management/rm-ym-01/index.html">RM-YM-01 &mdash; Vessel Load Factor Monitoring and Overbooking Strat…</a>
+        <a class="nav-l3" href="../../../revenue-management/yield-management/rm-ym-02/index.html">RM-YM-02 &mdash; Trade Lane Profitability Analysis and Corridor Revi…</a>
+        <a class="nav-l3" href="../../../revenue-management/yield-management/rm-ym-03/index.html">RM-YM-03 &mdash; Cargo Mix Optimisation for High-Value versus Commod…</a>
+        <a class="nav-l3" href="../../../revenue-management/yield-management/rm-ym-04/index.html">RM-YM-04 &mdash; Demurrage and Detention Revenue Management</a>
+        <a class="nav-l3" href="../../../revenue-management/yield-management/rm-ym-05/index.html">RM-YM-05 &mdash; Ancillary Revenue for Value-Added Services and Docu…</a>
+        <a class="nav-l3" href="../../../revenue-management/yield-management/rm-ym-06/index.html">RM-YM-06 &mdash; Proforma Voyage Profitability and Actual versus Bud…</a>
+        <a class="nav-l3" href="../../../revenue-management/yield-management/rm-ym-07/index.html">RM-YM-07 &mdash; Alliance Revenue Sharing and Slot Exchange Settleme…</a>
+        <a class="nav-l3" href="../../../revenue-management/yield-management/rm-ym-08/index.html">RM-YM-08 &mdash; Freight Forwarder Commission and Incentive Manageme…</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="nav-domain">
+  <a class="nav-l1" href="../../../customer-service/index.html"><span class="nav-l1-icon">🤝</span><span class="nav-org-dot comm"></span><span class="nav-l1-text">Customer Service &amp; Sales</span><span class="nav-l1-caret">&#9654;</span></a>
+  <div class="nav-l2-list">
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../customer-service/sales-account-management/index.html">Sales and Account Management</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../customer-service/sales-account-management/cs-sl-01/index.html">CS-SL-01 &mdash; Enterprise Customer Prospecting and RFQ Management</a>
+        <a class="nav-l3" href="../../../customer-service/sales-account-management/cs-sl-02/index.html">CS-SL-02 &mdash; Service Contract Negotiation and Terms Agreement</a>
+        <a class="nav-l3" href="../../../customer-service/sales-account-management/cs-sl-03/index.html">CS-SL-03 &mdash; Key Account Management and Customer Review Meetings</a>
+        <a class="nav-l3" href="../../../customer-service/sales-account-management/cs-sl-04/index.html">CS-SL-04 &mdash; New Lane Development and Cargo Development</a>
+        <a class="nav-l3" href="../../../customer-service/sales-account-management/cs-sl-05/index.html">CS-SL-05 &mdash; Freight Forwarder Partnership and Volume Agreement</a>
+        <a class="nav-l3" href="../../../customer-service/sales-account-management/cs-sl-06/index.html">CS-SL-06 &mdash; E-Commerce Customer Onboarding and Maersk.com API I…</a>
+        <a class="nav-l3" href="../../../customer-service/sales-account-management/cs-sl-07/index.html">CS-SL-07 &mdash; Sales Pipeline Management and Forecasting</a>
+        <a class="nav-l3" href="../../../customer-service/sales-account-management/cs-sl-08/index.html">CS-SL-08 &mdash; Tender Response and Win Loss Analysis</a>
+      </div>
+    </div>
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../customer-service/customer-service-operations/index.html">Customer Service Operations</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../customer-service/customer-service-operations/cs-sv-01/index.html">CS-SV-01 &mdash; Booking Exception Handling and Rollover Communicati…</a>
+        <a class="nav-l3" href="../../../customer-service/customer-service-operations/cs-sv-02/index.html">CS-SV-02 &mdash; Cargo Claim Filing and Investigation under B/L Carr…</a>
+        <a class="nav-l3" href="../../../customer-service/customer-service-operations/cs-sv-03/index.html">CS-SV-03 &mdash; Complaint Management and Service Failure Resolution</a>
+        <a class="nav-l3" href="../../../customer-service/customer-service-operations/cs-sv-04/index.html">CS-SV-04 &mdash; Detention and Demurrage Dispute Resolution</a>
+        <a class="nav-l3" href="../../../customer-service/customer-service-operations/cs-sv-05/index.html">CS-SV-05 &mdash; Customer Portal Onboarding and API Integration Supp…</a>
+        <a class="nav-l3" href="../../../customer-service/customer-service-operations/cs-sv-06/index.html">CS-SV-06 &mdash; VIP Shipper and Key Account Escalation Management</a>
+        <a class="nav-l3" href="../../../customer-service/customer-service-operations/cs-sv-07/index.html">CS-SV-07 &mdash; Vessel Delay Communication and Proactive Exception…</a>
+        <a class="nav-l3" href="../../../customer-service/customer-service-operations/cs-sv-08/index.html">CS-SV-08 &mdash; Net Promoter Score Survey and Customer Satisfaction…</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="nav-domain">
+  <a class="nav-l1" href="../../../hsse-quality/index.html"><span class="nav-l1-icon">🦺</span><span class="nav-org-dot ops"></span><span class="nav-l1-text">HSSE &amp; Quality Management</span><span class="nav-l1-caret">&#9654;</span></a>
+  <div class="nav-l2-list">
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../hsse-quality/safety-emergency/index.html">Safety and Emergency Management</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../hsse-quality/safety-emergency/hs-sf-01/index.html">HS-SF-01 &mdash; Safety Management System Maintenance and Audit unde…</a>
+        <a class="nav-l3" href="../../../hsse-quality/safety-emergency/hs-sf-02/index.html">HS-SF-02 &mdash; Incident Investigation and Root Cause Analysis</a>
+        <a class="nav-l3" href="../../../hsse-quality/safety-emergency/hs-sf-03/index.html">HS-SF-03 &mdash; Near-Miss and Hazard Reporting</a>
+        <a class="nav-l3" href="../../../hsse-quality/safety-emergency/hs-sf-04/index.html">HS-SF-04 &mdash; Emergency Drills for Fire, Flooding, Man Overboard…</a>
+        <a class="nav-l3" href="../../../hsse-quality/safety-emergency/hs-sf-05/index.html">HS-SF-05 &mdash; Permit to Work System Management for Hot Work and C…</a>
+        <a class="nav-l3" href="../../../hsse-quality/safety-emergency/hs-sf-06/index.html">HS-SF-06 &mdash; Port Reception Facility Coordination and Waste Disc…</a>
+        <a class="nav-l3" href="../../../hsse-quality/safety-emergency/hs-sf-07/index.html">HS-SF-07 &mdash; Seafarer Personal Protective Equipment and Safety I…</a>
+        <a class="nav-l3" href="../../../hsse-quality/safety-emergency/hs-sf-08/index.html">HS-SF-08 &mdash; HSSE KPI Reporting and Board Safety Review</a>
+      </div>
+    </div>
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../hsse-quality/environmental-quality/index.html">Environmental and Quality Compliance</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../hsse-quality/environmental-quality/hs-en-01/index.html">HS-EN-01 &mdash; MARPOL Compliance for Oil Record Book and Garbage R…</a>
+        <a class="nav-l3" href="../../../hsse-quality/environmental-quality/hs-en-02/index.html">HS-EN-02 &mdash; Ballast Water Reporting and IMO BWM Convention Comp…</a>
+        <a class="nav-l3" href="../../../hsse-quality/environmental-quality/hs-en-03/index.html">HS-EN-03 &mdash; Noise and Vibration Monitoring for Crew Health and…</a>
+        <a class="nav-l3" href="../../../hsse-quality/environmental-quality/hs-en-04/index.html">HS-EN-04 &mdash; Anti-Fouling System Compliance under AFS Convention</a>
+        <a class="nav-l3" href="../../../hsse-quality/environmental-quality/hs-en-05/index.html">HS-EN-05 &mdash; ISO 9001 Quality Management System Audit</a>
+        <a class="nav-l3" href="../../../hsse-quality/environmental-quality/hs-en-06/index.html">HS-EN-06 &mdash; Customer Cargo Quality Claim Investigation</a>
+        <a class="nav-l3" href="../../../hsse-quality/environmental-quality/hs-en-07/index.html">HS-EN-07 &mdash; Reefer Cargo Temperature Excursion Investigation</a>
+        <a class="nav-l3" href="../../../hsse-quality/environmental-quality/hs-en-08/index.html">HS-EN-08 &mdash; Bulk and Chemical Cargo Safety Protocol Management</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="nav-domain">
+  <a class="nav-l1" href="../../../hr-crew/index.html"><span class="nav-l1-icon">👥</span><span class="nav-org-dot corp"></span><span class="nav-l1-text">Human Resources &amp; Crew Management</span><span class="nav-l1-caret">&#9654;</span></a>
+  <div class="nav-l2-list">
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../hr-crew/crew-management/index.html">Seafarer and Crew Management</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../hr-crew/crew-management/hr-cr-01/index.html">HR-CR-01 &mdash; Seafarer Recruitment and STCW Certification Verific…</a>
+        <a class="nav-l3" href="../../../hr-crew/crew-management/hr-cr-02/index.html">HR-CR-02 &mdash; Crew Rotation Planning and Sign-On and Sign-Off Man…</a>
+        <a class="nav-l3" href="../../../hr-crew/crew-management/hr-cr-03/index.html">HR-CR-03 &mdash; Seafarer Payroll and Collective Bargaining Agreemen…</a>
+        <a class="nav-l3" href="../../../hr-crew/crew-management/hr-cr-04/index.html">HR-CR-04 &mdash; STCW Refresher Training and Revalidation Management</a>
+        <a class="nav-l3" href="../../../hr-crew/crew-management/hr-cr-05/index.html">HR-CR-05 &mdash; Manning Agency Management and Flag State Endorsement</a>
+        <a class="nav-l3" href="../../../hr-crew/crew-management/hr-cr-06/index.html">HR-CR-06 &mdash; Seafarer Medical Fitness Certificate Management</a>
+        <a class="nav-l3" href="../../../hr-crew/crew-management/hr-cr-07/index.html">HR-CR-07 &mdash; Crew Welfare and MLC 2006 Compliance Audit</a>
+        <a class="nav-l3" href="../../../hr-crew/crew-management/hr-cr-08/index.html">HR-CR-08 &mdash; Crew Repatriation and Emergency Evacuation Manageme…</a>
+      </div>
+    </div>
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../hr-crew/shore-hr/index.html">Shore Staff and Corporate HR</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../hr-crew/shore-hr/hr-sh-01/index.html">HR-SH-01 &mdash; Talent Acquisition and Global Mobility Management</a>
+        <a class="nav-l3" href="../../../hr-crew/shore-hr/hr-sh-02/index.html">HR-SH-02 &mdash; Performance Management and Annual Appraisal Cycle</a>
+        <a class="nav-l3" href="../../../hr-crew/shore-hr/hr-sh-03/index.html">HR-SH-03 &mdash; Learning and Development for the Maritime Competenc…</a>
+        <a class="nav-l3" href="../../../hr-crew/shore-hr/hr-sh-04/index.html">HR-SH-04 &mdash; Compensation, Benefits and Bonus Administration</a>
+        <a class="nav-l3" href="../../../hr-crew/shore-hr/hr-sh-05/index.html">HR-SH-05 &mdash; Labour Relations and Works Council Engagement</a>
+        <a class="nav-l3" href="../../../hr-crew/shore-hr/hr-sh-06/index.html">HR-SH-06 &mdash; Diversity, Equity and Inclusion Programme Management</a>
+        <a class="nav-l3" href="../../../hr-crew/shore-hr/hr-sh-07/index.html">HR-SH-07 &mdash; Expatriate Assignment and Secondment Management</a>
+        <a class="nav-l3" href="../../../hr-crew/shore-hr/hr-sh-08/index.html">HR-SH-08 &mdash; Succession Planning and Leadership Pipeline Develop…</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="nav-domain">
+  <a class="nav-l1" href="../../../finance-accounting/index.html"><span class="nav-l1-icon">💰</span><span class="nav-org-dot corp"></span><span class="nav-l1-text">Finance &amp; Accounting</span><span class="nav-l1-caret">&#9654;</span></a>
+  <div class="nav-l2-list">
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../finance-accounting/voyage-accounting/index.html">Voyage Accounting</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../finance-accounting/voyage-accounting/fn-va-01/index.html">FN-VA-01 &mdash; Proforma Voyage Estimate and Budget</a>
+        <a class="nav-l3" href="../../../finance-accounting/voyage-accounting/fn-va-02/index.html">FN-VA-02 &mdash; Port Disbursement Account Review and Approval</a>
+        <a class="nav-l3" href="../../../finance-accounting/voyage-accounting/fn-va-03/index.html">FN-VA-03 &mdash; Freight Revenue Recognition under ASC 606 and IFRS…</a>
+        <a class="nav-l3" href="../../../finance-accounting/voyage-accounting/fn-va-04/index.html">FN-VA-04 &mdash; Bunker Cost Allocation and Fuel Accounting</a>
+        <a class="nav-l3" href="../../../finance-accounting/voyage-accounting/fn-va-05/index.html">FN-VA-05 &mdash; Voyage Actual versus Proforma Variance Analysis</a>
+        <a class="nav-l3" href="../../../finance-accounting/voyage-accounting/fn-va-06/index.html">FN-VA-06 &mdash; Charter Party Hire Payment and Off-Hire Deduction</a>
+        <a class="nav-l3" href="../../../finance-accounting/voyage-accounting/fn-va-07/index.html">FN-VA-07 &mdash; Canal and Port Dues Invoice Verification</a>
+        <a class="nav-l3" href="../../../finance-accounting/voyage-accounting/fn-va-08/index.html">FN-VA-08 &mdash; Intercompany Vessel Cost Allocation</a>
+      </div>
+    </div>
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../finance-accounting/corporate-finance/index.html">Corporate Finance and Control</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../finance-accounting/corporate-finance/fn-cf-01/index.html">FN-CF-01 &mdash; Month-End Close and Segment Reporting</a>
+        <a class="nav-l3" href="../../../finance-accounting/corporate-finance/fn-cf-02/index.html">FN-CF-02 &mdash; Accounts Payable Vendor Invoice and Three-Way Match</a>
+        <a class="nav-l3" href="../../../finance-accounting/corporate-finance/fn-cf-03/index.html">FN-CF-03 &mdash; Accounts Receivable and Freight Invoice Collection</a>
+        <a class="nav-l3" href="../../../finance-accounting/corporate-finance/fn-cf-04/index.html">FN-CF-04 &mdash; Treasury Cash Pooling, FX Hedging and Bunker Hedging</a>
+        <a class="nav-l3" href="../../../finance-accounting/corporate-finance/fn-cf-05/index.html">FN-CF-05 &mdash; Customs Duty Drawback and Tax Refund Management</a>
+        <a class="nav-l3" href="../../../finance-accounting/corporate-finance/fn-cf-06/index.html">FN-CF-06 &mdash; External Financial Reporting under IFRS and Danish…</a>
+        <a class="nav-l3" href="../../../finance-accounting/corporate-finance/fn-cf-07/index.html">FN-CF-07 &mdash; Internal Audit for Revenue Integrity and Freight Ra…</a>
+        <a class="nav-l3" href="../../../finance-accounting/corporate-finance/fn-cf-08/index.html">FN-CF-08 &mdash; SOX and GDPR Financial Controls and Documentation</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="nav-domain">
+  <a class="nav-l1" href="../../../it-digital/index.html"><span class="nav-l1-icon">🔐</span><span class="nav-org-dot corp"></span><span class="nav-l1-text">IT, Digital &amp; Cybersecurity</span><span class="nav-l1-caret">&#9654;</span></a>
+  <div class="nav-l2-list">
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../it-digital/it-operations/index.html">IT Operations and Infrastructure</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../it-digital/it-operations/it-op-01/index.html">IT-OP-01 &mdash; SAP S/4HANA System Administration and Release Manag…</a>
+        <a class="nav-l3" href="../../../it-digital/it-operations/it-op-02/index.html">IT-OP-02 &mdash; Navis N4 TOS Administration and Terminal Interface…</a>
+        <a class="nav-l3" href="../../../it-digital/it-operations/it-op-03/index.html">IT-OP-03 &mdash; Azure Cloud Infrastructure Management and Cost Opti…</a>
+        <a class="nav-l3" href="../../../it-digital/it-operations/it-op-04/index.html">IT-OP-04 &mdash; Vessel IT Systems Support for VSAT, Bridge Systems…</a>
+        <a class="nav-l3" href="../../../it-digital/it-operations/it-op-05/index.html">IT-OP-05 &mdash; IT Service Desk and ITSM Operations</a>
+        <a class="nav-l3" href="../../../it-digital/it-operations/it-op-06/index.html">IT-OP-06 &mdash; Data Centre Operations and Disaster Recovery Manage…</a>
+        <a class="nav-l3" href="../../../it-digital/it-operations/it-op-07/index.html">IT-OP-07 &mdash; API Gateway and Integration Platform Management</a>
+        <a class="nav-l3" href="../../../it-digital/it-operations/it-op-08/index.html">IT-OP-08 &mdash; Digital Customer Platform Administration for Maersk…</a>
+      </div>
+    </div>
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../it-digital/cybersecurity/index.html">Cybersecurity</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../it-digital/cybersecurity/it-cy-01/index.html">IT-CY-01 &mdash; Security Operations Centre Monitoring on Microsoft…</a>
+        <a class="nav-l3" href="../../../it-digital/cybersecurity/it-cy-02/index.html">IT-CY-02 &mdash; Vulnerability Management and Patch Deployment</a>
+        <a class="nav-l3" href="../../../it-digital/cybersecurity/it-cy-03/index.html">IT-CY-03 &mdash; Identity and Access Management with Azure AD, MFA a…</a>
+        <a class="nav-l3" href="../../../it-digital/cybersecurity/it-cy-04/index.html">IT-CY-04 &mdash; Vessel Operational Technology Network Security</a>
+        <a class="nav-l3" href="../../../it-digital/cybersecurity/it-cy-05/index.html">IT-CY-05 &mdash; Cyber Incident Response using the NotPetya Playbook</a>
+        <a class="nav-l3" href="../../../it-digital/cybersecurity/it-cy-06/index.html">IT-CY-06 &mdash; Third-Party and Supply Chain Cyber Risk Assessment</a>
+        <a class="nav-l3" href="../../../it-digital/cybersecurity/it-cy-07/index.html">IT-CY-07 &mdash; PCI DSS Compliance for Freight Payment Card Process…</a>
+        <a class="nav-l3" href="../../../it-digital/cybersecurity/it-cy-08/index.html">IT-CY-08 &mdash; Employee Phishing Awareness and Security Culture Tr…</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="nav-domain">
+  <a class="nav-l1" href="../../../procurement/index.html"><span class="nav-l1-icon">🛒</span><span class="nav-org-dot corp"></span><span class="nav-l1-text">Procurement &amp; Supply Chain</span><span class="nav-l1-caret">&#9654;</span></a>
+  <div class="nav-l2-list">
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../procurement/strategic-procurement/index.html">Strategic Procurement</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../procurement/strategic-procurement/pr-sp-01/index.html">PR-SP-01 &mdash; Bunker Supplier Qualification and Approved Vendor L…</a>
+        <a class="nav-l3" href="../../../procurement/strategic-procurement/pr-sp-02/index.html">PR-SP-02 &mdash; Ship Chandler and Port Agent Procurement and Manage…</a>
+        <a class="nav-l3" href="../../../procurement/strategic-procurement/pr-sp-03/index.html">PR-SP-03 &mdash; Dry Dock and Shipyard Tender and Contract Award</a>
+        <a class="nav-l3" href="../../../procurement/strategic-procurement/pr-sp-04/index.html">PR-SP-04 &mdash; Spare Parts Global Category Management</a>
+        <a class="nav-l3" href="../../../procurement/strategic-procurement/pr-sp-05/index.html">PR-SP-05 &mdash; Cargo Equipment Procurement and New Container Orders</a>
+        <a class="nav-l3" href="../../../procurement/strategic-procurement/pr-sp-06/index.html">PR-SP-06 &mdash; IT Hardware and Software Vendor Management</a>
+        <a class="nav-l3" href="../../../procurement/strategic-procurement/pr-sp-07/index.html">PR-SP-07 &mdash; Supplier Performance Monitoring and Scorecard</a>
+        <a class="nav-l3" href="../../../procurement/strategic-procurement/pr-sp-08/index.html">PR-SP-08 &mdash; Contract Lifecycle Management and Renewal Calendar</a>
+      </div>
+    </div>
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../procurement/operational-procurement/index.html">Operational Procurement and Vessel Supply</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../procurement/operational-procurement/pr-op-01/index.html">PR-OP-01 &mdash; Purchase Requisition to Purchase Order Cycle in SAP…</a>
+        <a class="nav-l3" href="../../../procurement/operational-procurement/pr-op-02/index.html">PR-OP-02 &mdash; Ship Chandling and Provisions Ordering for Vessel P…</a>
+        <a class="nav-l3" href="../../../procurement/operational-procurement/pr-op-03/index.html">PR-OP-03 &mdash; Spare Parts Requisition and Emergency Air Freight D…</a>
+        <a class="nav-l3" href="../../../procurement/operational-procurement/pr-op-04/index.html">PR-OP-04 &mdash; Port Agent Appointment and Disbursement Account Pre…</a>
+        <a class="nav-l3" href="../../../procurement/operational-procurement/pr-op-05/index.html">PR-OP-05 &mdash; Goods Receipt and Three-Way Match at Vessel and Dep…</a>
+        <a class="nav-l3" href="../../../procurement/operational-procurement/pr-op-06/index.html">PR-OP-06 &mdash; Vendor Invoice Exception and Price Variance Resolut…</a>
+        <a class="nav-l3" href="../../../procurement/operational-procurement/pr-op-07/index.html">PR-OP-07 &mdash; Warehouse and Depot Consumables Replenishment</a>
+        <a class="nav-l3" href="../../../procurement/operational-procurement/pr-op-08/index.html">PR-OP-08 &mdash; Procurement Master Data and Material Catalogue Main…</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="nav-domain">
+  <a class="nav-l1" href="../../../sustainability/index.html"><span class="nav-l1-icon">🌿</span><span class="nav-org-dot corp"></span><span class="nav-l1-text">Sustainability &amp; Decarbonisation</span><span class="nav-l1-caret">&#9654;</span></a>
+  <div class="nav-l2-list">
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../sustainability/decarbonisation/index.html">Decarbonisation and Emissions</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../sustainability/decarbonisation/su-dc-01/index.html">SU-DC-01 &mdash; CII Calculation and Rating Management</a>
+        <a class="nav-l3" href="../../../sustainability/decarbonisation/su-dc-02/index.html">SU-DC-02 &mdash; EEXI Compliance and Energy Efficiency Technical File</a>
+        <a class="nav-l3" href="../../../sustainability/decarbonisation/su-dc-03/index.html">SU-DC-03 &mdash; EU MRV and IMO DCS Emissions Data Collection and Re…</a>
+        <a class="nav-l3" href="../../../sustainability/decarbonisation/su-dc-04/index.html">SU-DC-04 &mdash; Green Methanol Procurement and Supply Chain Develop…</a>
+        <a class="nav-l3" href="../../../sustainability/decarbonisation/su-dc-05/index.html">SU-DC-05 &mdash; Carbon Offset and Insetting Programme Management</a>
+        <a class="nav-l3" href="../../../sustainability/decarbonisation/su-dc-06/index.html">SU-DC-06 &mdash; ECO Delivery Green Shipping Customer Product Manage…</a>
+        <a class="nav-l3" href="../../../sustainability/decarbonisation/su-dc-07/index.html">SU-DC-07 &mdash; Science-Based Targets Commitment and Progress Repor…</a>
+        <a class="nav-l3" href="../../../sustainability/decarbonisation/su-dc-08/index.html">SU-DC-08 &mdash; Sustainable Shipping Network Partnership and Indust…</a>
+      </div>
+    </div>
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../sustainability/esg-reporting/index.html">ESG Reporting and Circular Economy</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../sustainability/esg-reporting/su-es-01/index.html">SU-ES-01 &mdash; CSRD and ESRS Sustainability Statement Preparation</a>
+        <a class="nav-l3" href="../../../sustainability/esg-reporting/su-es-02/index.html">SU-ES-02 &mdash; EU ETS Allowance Surrender and Carbon Cost Pass-Thr…</a>
+        <a class="nav-l3" href="../../../sustainability/esg-reporting/su-es-03/index.html">SU-ES-03 &mdash; Scope 1, 2 and 3 Greenhouse Gas Inventory Consolida…</a>
+        <a class="nav-l3" href="../../../sustainability/esg-reporting/su-es-04/index.html">SU-ES-04 &mdash; Ship Recycling and Hong Kong Convention Compliance</a>
+        <a class="nav-l3" href="../../../sustainability/esg-reporting/su-es-05/index.html">SU-ES-05 &mdash; Inventory of Hazardous Materials Maintenance</a>
+        <a class="nav-l3" href="../../../sustainability/esg-reporting/su-es-06/index.html">SU-ES-06 &mdash; Supplier ESG Screening and Responsible Sourcing Aud…</a>
+        <a class="nav-l3" href="../../../sustainability/esg-reporting/su-es-07/index.html">SU-ES-07 &mdash; Ocean Health Programme Management for Whale Strike…</a>
+        <a class="nav-l3" href="../../../sustainability/esg-reporting/su-es-08/index.html">SU-ES-08 &mdash; ESG Rating Agency Response and Investor Disclosure</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="nav-domain">
+  <a class="nav-l1" href="../../../intermodal/index.html"><span class="nav-l1-icon">🚛</span><span class="nav-org-dot flow"></span><span class="nav-l1-text">Intermodal &amp; Last Mile Logistics</span><span class="nav-l1-caret">&#9654;</span></a>
+  <div class="nav-l2-list">
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../intermodal/intermodal-operations/index.html">Intermodal Operations</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../intermodal/intermodal-operations/im-in-01/index.html">IM-IN-01 &mdash; Port-to-Inland Rail Intermodal Booking with BNSF an…</a>
+        <a class="nav-l3" href="../../../intermodal/intermodal-operations/im-in-02/index.html">IM-IN-02 &mdash; Inland Container Depot Operations Management</a>
+        <a class="nav-l3" href="../../../intermodal/intermodal-operations/im-in-03/index.html">IM-IN-03 &mdash; Drayage Carrier Management and Street Turn Optimisa…</a>
+        <a class="nav-l3" href="../../../intermodal/intermodal-operations/im-in-04/index.html">IM-IN-04 &mdash; US Customs Exam Coordination at Inland Port</a>
+        <a class="nav-l3" href="../../../intermodal/intermodal-operations/im-in-05/index.html">IM-IN-05 &mdash; Last Mile Delivery Scheduling and Customer Notifica…</a>
+        <a class="nav-l3" href="../../../intermodal/intermodal-operations/im-in-06/index.html">IM-IN-06 &mdash; White Glove Delivery and Room-of-Choice Service</a>
+        <a class="nav-l3" href="../../../intermodal/intermodal-operations/im-in-07/index.html">IM-IN-07 &mdash; B2C Parcel and E-Commerce Last Mile Coordination</a>
+        <a class="nav-l3" href="../../../intermodal/intermodal-operations/im-in-08/index.html">IM-IN-08 &mdash; Reverse Logistics and Returns Processing</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="nav-domain">
+  <a class="nav-l1" href="../../../legal-regulatory/index.html"><span class="nav-l1-icon">⚖</span><span class="nav-org-dot corp"></span><span class="nav-l1-text">Legal, Regulatory &amp; Insurance</span><span class="nav-l1-caret">&#9654;</span></a>
+  <div class="nav-l2-list">
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../legal-regulatory/legal-insurance/index.html">Legal and Insurance</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../legal-regulatory/legal-insurance/lg-li-01/index.html">LG-LI-01 &mdash; P&amp;I Club Claim Notification and Management</a>
+        <a class="nav-l3" href="../../../legal-regulatory/legal-insurance/lg-li-02/index.html">LG-LI-02 &mdash; Hull and Machinery Insurance Annual Renewal</a>
+        <a class="nav-l3" href="../../../legal-regulatory/legal-insurance/lg-li-03/index.html">LG-LI-03 &mdash; Cargo Claims Legal Defence and Settlement</a>
+        <a class="nav-l3" href="../../../legal-regulatory/legal-insurance/lg-li-04/index.html">LG-LI-04 &mdash; Charter Party Arbitration and Dispute Resolution un…</a>
+        <a class="nav-l3" href="../../../legal-regulatory/legal-insurance/lg-li-05/index.html">LG-LI-05 &mdash; Vessel Arrest Prevention and Release Management</a>
+        <a class="nav-l3" href="../../../legal-regulatory/legal-insurance/lg-li-06/index.html">LG-LI-06 &mdash; Regulatory Penalty Response for PSC Detention and F…</a>
+        <a class="nav-l3" href="../../../legal-regulatory/legal-insurance/lg-li-07/index.html">LG-LI-07 &mdash; Contract Review for Service Agreements and Agency A…</a>
+        <a class="nav-l3" href="../../../legal-regulatory/legal-insurance/lg-li-08/index.html">LG-LI-08 &mdash; GDPR and Data Privacy Compliance Management</a>
+      </div>
+    </div>
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../legal-regulatory/regulatory-affairs/index.html">Regulatory Affairs and Corporate Governance</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../legal-regulatory/regulatory-affairs/lg-rg-01/index.html">LG-RG-01 &mdash; Competition Law and Alliance Antitrust Compliance</a>
+        <a class="nav-l3" href="../../../legal-regulatory/regulatory-affairs/lg-rg-02/index.html">LG-RG-02 &mdash; FMC and EU Consortia Block Exemption Filing Managem…</a>
+        <a class="nav-l3" href="../../../legal-regulatory/regulatory-affairs/lg-rg-03/index.html">LG-RG-03 &mdash; Corporate Entity Governance and Subsidiary Board Ad…</a>
+        <a class="nav-l3" href="../../../legal-regulatory/regulatory-affairs/lg-rg-04/index.html">LG-RG-04 &mdash; Sanctions Legal Advisory and Vessel Screening Escal…</a>
+        <a class="nav-l3" href="../../../legal-regulatory/regulatory-affairs/lg-rg-05/index.html">LG-RG-05 &mdash; Anti-Bribery and Facilitation Payment Compliance</a>
+        <a class="nav-l3" href="../../../legal-regulatory/regulatory-affairs/lg-rg-06/index.html">LG-RG-06 &mdash; Litigation Hold, e-Discovery and Legal Case Managem…</a>
+        <a class="nav-l3" href="../../../legal-regulatory/regulatory-affairs/lg-rg-07/index.html">LG-RG-07 &mdash; Trademark, Brand and Intellectual Property Protecti…</a>
+        <a class="nav-l3" href="../../../legal-regulatory/regulatory-affairs/lg-rg-08/index.html">LG-RG-08 &mdash; Regulatory Horizon Scanning and Industry Body Engag…</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="nav-domain">
+  <a class="nav-l1" href="../../../ea-diagrams/index.html"><span class="nav-l1-icon">🗺</span><span class="nav-org-dot corp"></span><span class="nav-l1-text">Enterprise Architecture</span><span class="nav-l1-caret">&#9654;</span></a>
+  <div class="nav-l2-list">
+    <div class="nav-l2-group">
+      <a class="nav-l2-title" href="../../../ea-diagrams/index.html">EA Diagrams</a>
+      <div class="nav-l3-list">
+        <a class="nav-l3" href="../../../ea-diagrams/ea-01/index.html">EA-01 &mdash; Shipping Enterprise System Landscape</a>
+        <a class="nav-l3" href="../../../ea-diagrams/ea-02/index.html">EA-02 &mdash; Cargo Journey Data Flow</a>
+        <a class="nav-l3" href="../../../ea-diagrams/ea-03/index.html">EA-03 &mdash; Terminal Operations Architecture</a>
+        <a class="nav-l3" href="../../../ea-diagrams/ea-04/index.html">EA-04 &mdash; Integrated Logistics Platform Architecture</a>
+        <a class="nav-l3" href="../../../ea-diagrams/ea-05/index.html">EA-05 &mdash; Customs and Trade Compliance Data Flow</a>
+        <a class="nav-l3" href="../../../ea-diagrams/ea-06/index.html">EA-06 &mdash; Fleet Management and Maintenance Architecture</a>
+        <a class="nav-l3" href="../../../ea-diagrams/ea-07/index.html">EA-07 &mdash; Revenue Management and Pricing Architecture</a>
+        <a class="nav-l3" href="../../../ea-diagrams/ea-08/index.html">EA-08 &mdash; Sustainability and Decarbonisation Architecture</a>
+        <a class="nav-l3" href="../../../ea-diagrams/ea-09/index.html">EA-09 &mdash; Cybersecurity Architecture</a>
+        <a class="nav-l3" href="../../../ea-diagrams/ea-10/index.html">EA-10 &mdash; Customer Digital Platform Architecture</a>
+      </div>
+    </div>
+  </div>
+</div>
+</nav>
+    </nav>
+    <main class="wiki-main">
+      <div class="page-header">
+        <div class="breadcrumb">
+          <a href="../../../index.html">Home</a> &rsaquo;
+          <a href="../../../vessel-operations/index.html">Vessel Operations &amp; Navigation</a> &rsaquo;
+          <a href="../../../vessel-operations/voyage-planning/index.html">Voyage Planning &amp; Navigation</a>
+        </div>
+        <h1>
+          <span class="pid-badge org-badge-ops">VO</span>
+          VO-NP-03 &mdash; Fuel Planning and Bunker Strategy with Slow Steaming Optimisation
+        </h1>
+        <p>This process involves planning the fuel consumption for Maersk vessels during their voyages to optimize bunker strategy and reduce costs while ensuring compliance with maritime regulations.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">&#x1F5FA; BPMN Process Flow</div>
+        <div class="card-body">
+          <div class="diagram-wrap">
+            <a href="../../../assets/img/vo-np-03.svg" data-lightbox data-title="VO-NP-03 BPMN">
+              <img src="../../../assets/img/vo-np-03.svg" alt="VO-NP-03 BPMN Diagram">
+            </a>
+            <p>Click diagram to zoom &amp; pan &bull; Scroll to zoom &bull; Drag to pan &bull;
+               <a href="../../../assets/img/vo-np-03.svg" download>Download SVG</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">&#x1F4CB; Process Attributes</div>
+        <div class="card-body">
+          <table class="attr-table">
+            <tr><th>Process ID</th><td>VO-NP-03</td></tr>
+            <tr><th>Domain Family</th><td>OPERATIONS</td></tr>
+            <tr><th>L1 Domain</th><td>Vessel Operations &amp; Navigation</td></tr>
+            <tr><th>L2 Process Group</th><td>Voyage Planning &amp; Navigation</td></tr>
+            <tr><th>L3 Name</th><td>Fuel Planning and Bunker Strategy with Slow Steaming Optimisation</td></tr>
+            <tr><th>Trigger</th><td>Initiated by the Trade Lane Manager based on upcoming voyage schedules and market fuel prices.</td></tr>
+            <tr><th>Outcome</th><td>Successful completion results in an optimized fuel plan that minimizes operational costs, ensures regulatory compliance, and enhances vessel efficiency.</td></tr>
+            <tr><th>Systems</th><td><span class="sys-tag navis-n4">Navis N4 TOS</span> <span class="sys-tag shipnet">SHIPNET</span> <span class="sys-tag shipnet">Amos ABB planned maintenance</span> <span class="sys-tag cargo-opt">CargOPTIMIZER stowage planning</span> <span class="sys-tag sap">SAP S/4HANA ERP</span> <span class="sys-tag powerbi">Power BI</span></td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">&#x1F4CB; L4 Process Steps</div>
+        <div class="card-body">
+          <div class="l4-table-wrap">
+            <table class="l4-table">
+              <thead>
+                <tr>
+                  <th>Step</th><th>Name</th><th>Role</th><th>System</th>
+                  <th>Input</th><th>Output</th><th>KPI</th><th>Pain Point / Risk</th>
+                  <th>Decision?</th><th>Exception?</th>
+                </tr>
+              </thead>
+              <tbody>
+        <tr>
+          <td class="step-num">1.1</td>
+          <td>Voyage Route Planning</td>
+          <td>Trade Lane Manager</td>
+          <td><span class="sys-tag navis-n4">Navis N4 TOS</span></td>
+          <td>Voyage itinerary, weather data, and fuel prices</td>
+          <td>Optimized voyage route with estimated fuel consumption</td>
+          <td>Route optimization efficiency 90%</td>
+          <td>Inaccurate weather forecasts affecting fuel planning</td>
+          <td>N</td>
+          <td><span class="exception-y">Y</span></td>
+        </tr>
+        <tr>
+          <td class="step-num">1.2</td>
+          <td>Fuel Consumption Estimation</td>
+          <td>Vessel Master</td>
+          <td><span class="sys-tag shipnet">SHIPNET and Amos ABB planned maintenance</span></td>
+          <td>Voyage route, vessel specifications, and historical fuel consumption data</td>
+          <td>Detailed fuel consumption report</td>
+          <td>Fuel consumption accuracy 95%</td>
+          <td>Inconsistent engine performance affecting fuel estimates</td>
+          <td><span class="decision-y">Y</span></td>
+          <td>N</td>
+        </tr>
+        <tr>
+          <td class="step-num">1.3</td>
+          <td>Bunker Port Selection</td>
+          <td>Chief Officer</td>
+          <td><span class="sys-tag cargo-opt">CargOPTIMIZER stowage planning</span></td>
+          <td>Fuel consumption report, bunker port availability, and logistics constraints</td>
+          <td>Recommended bunker ports with estimated costs</td>
+          <td>Bunker cost optimization 85%</td>
+          <td>Port congestion affecting bunker operations</td>
+          <td><span class="decision-y">Y</span></td>
+          <td><span class="exception-y">Y</span></td>
+        </tr>
+        <tr>
+          <td class="step-num">1.4</td>
+          <td>Fuel Bunkering Schedule</td>
+          <td>Cargo Planner</td>
+          <td><span class="sys-tag navis-n4">Navis N4 TOS and SAP S/4HANA ERP</span></td>
+          <td>Bunker port selection, vessel schedule, and cargo loading/unloading plans</td>
+          <td>Integrated bunker schedule with vessel operations</td>
+          <td>Bunkering schedule adherence 90%</td>
+          <td>Cargo delays impacting bunker timing</td>
+          <td>N</td>
+          <td><span class="exception-y">Y</span></td>
+        </tr>
+        <tr>
+          <td class="step-num">1.5</td>
+          <td>Fuel Quality Compliance Check</td>
+          <td>Port Captain</td>
+          <td><span class="sys-tag dnv">DNV and Lloyd's Register classification</span></td>
+          <td>Bunker fuel samples, vessel specifications, and regulatory requirements</td>
+          <td>Compliance certification for bunker fuel quality</td>
+          <td>Fuel quality compliance 100%</td>
+          <td>Non-compliant fuel affecting engine performance</td>
+          <td><span class="decision-y">Y</span></td>
+          <td>N</td>
+        </tr>
+        <tr>
+          <td class="step-num">1.6</td>
+          <td>Slow Steaming Strategy Implementation</td>
+          <td>Trade Lane Manager</td>
+          <td><span class="sys-tag veson">Veson Nautical IMOS voyage management</span></td>
+          <td>Fuel consumption report, bunker schedule, and market conditions</td>
+          <td>Optimized slow steaming plan</td>
+          <td>Slow steaming efficiency 80%</td>
+          <td>Customer service impacts from reduced speed</td>
+          <td><span class="decision-y">Y</span></td>
+          <td>N</td>
+        </tr>
+        <tr>
+          <td class="step-num">1.7</td>
+          <td>Fuel Cost Analysis</td>
+          <td>Operations Manager</td>
+          <td><span class="sys-tag sap">SAP S/4HANA ERP and Power BI</span></td>
+          <td>Bunker fuel costs, voyage schedules, and market trends</td>
+          <td>Cost analysis report with recommendations</td>
+          <td>Fuel cost reduction 10%</td>
+          <td>Volatility in fuel prices affecting budget</td>
+          <td>N</td>
+          <td><span class="exception-y">Y</span></td>
+        </tr>
+        <tr>
+          <td class="step-num">1.8</td>
+          <td>Customs Clearance for Bunker Fuel</td>
+          <td>Customs Broker</td>
+          <td><span class="sys-tag descartes">Descartes and MIC Customs</span></td>
+          <td>Bunker fuel details, vessel information, and customs regulations</td>
+          <td>Clearance documentation</td>
+          <td>Customs clearance time 24 hours</td>
+          <td>Complex customs procedures delaying bunker operations</td>
+          <td><span class="decision-y">Y</span></td>
+          <td>N</td>
+        </tr>
+        <tr>
+          <td class="step-num">1.9</td>
+          <td>Voyage Performance Monitoring</td>
+          <td>Vessel Master</td>
+          <td><span class="sys-tag shipnet">SHIPNET and Amos ABB planned maintenance</span></td>
+          <td>Real-time vessel data, fuel consumption, and voyage progress</td>
+          <td>Performance report with deviations</td>
+          <td>Voyage performance monitoring accuracy 95%</td>
+          <td>Technical issues affecting data collection</td>
+          <td><span class="decision-y">Y</span></td>
+          <td>N</td>
+        </tr>
+        <tr>
+          <td class="step-num">1.10</td>
+          <td>Fuel Plan Adjustment</td>
+          <td>Trade Lane Manager</td>
+          <td><span class="sys-tag navis-n4">Navis N4 TOS and SAP S/4HANA ERP</span></td>
+          <td>Performance report, market conditions, and regulatory changes</td>
+          <td>Adjusted fuel plan</td>
+          <td>Plan adjustment frequency 5%</td>
+          <td>Unexpected delays affecting fuel planning</td>
+          <td><span class="decision-y">Y</span></td>
+          <td><span class="exception-y">Y</span></td>
+        </tr>
+        <tr>
+          <td class="step-num">1.11</td>
+          <td>HSSE Compliance Review</td>
+          <td>Port Captain</td>
+          <td><span class="sys-tag synergi">Synergi Life HSSE</span></td>
+          <td>Bunker operations data, vessel safety records, and regulatory requirements</td>
+          <td>Compliance review report</td>
+          <td>HSSE compliance 100%</td>
+          <td>Safety incidents during bunker operations</td>
+          <td><span class="decision-y">Y</span></td>
+          <td>N</td>
+        </tr>
+        <tr>
+          <td class="step-num">1.12</td>
+          <td>Final Bunker Execution</td>
+          <td>Chief Officer</td>
+          <td><span class="sys-tag navis-n4">Navis N4 TOS and SAP S/4HANA ERP</span></td>
+          <td>Adjusted fuel plan, bunker port details, and logistics coordination</td>
+          <td>Completed bunker operations</td>
+          <td>Bunker execution success rate 98%</td>
+          <td>Logistical issues affecting bunker timing</td>
+          <td>N</td>
+          <td><span class="exception-y">Y</span></td>
+        </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">&#x1F4CA; KPIs &amp; Risk Register</div>
+        <div class="card-body">
+          <p class="mb-8"><strong>KPIs</strong></p>
+          <div class="kpi-list mb-8"><span class="kpi-pill">Route optimization efficiency 90%</span> <span class="kpi-pill">Fuel consumption accuracy 95%</span> <span class="kpi-pill">Bunker cost optimization 85%</span> <span class="kpi-pill">Bunkering schedule adherence 90%</span> <span class="kpi-pill">Fuel quality compliance 100%</span> <span class="kpi-pill">Slow steaming efficiency 80%</span> <span class="kpi-pill">Fuel cost reduction 10%</span> <span class="kpi-pill">Customs clearance time 24 hours</span> <span class="kpi-pill">Voyage performance monitoring accuracy 95%</span> <span class="kpi-pill">Plan adjustment frequency 5%</span> <span class="kpi-pill">HSSE compliance 100%</span> <span class="kpi-pill">Bunker execution success rate 98%</span></div>
+          <p class="mb-8" style="margin-top:16px"><strong>Key Risks</strong></p>
+          <div class="kpi-list"><span class="risk-pill">Inaccurate weather forecasts affecting fuel planning</span> <span class="risk-pill">Non-compliant fuel affecting engine performance</span> <span class="risk-pill">Port congestion affecting bunker operations</span> <span class="risk-pill">Cargo delays impacting bunker timing</span> <span class="risk-pill">Complex customs procedures delaying bunker operations</span> <span class="risk-pill">Technical issues affecting data collection</span> <span class="risk-pill">Safety incidents during bunker operations</span> <span class="risk-pill">Logistical issues affecting bunker timing</span></div>
+          <p class="mb-8" style="margin-top:16px"><strong>Swim Lanes</strong></p><div class="kpi-list"><span class="kpi-pill" style="background:#e2e8f0;color:#334155">Trade Lane Manager &middot; 1.1, 1.3, 1.6, 1.7, 1.10</span> <span class="kpi-pill" style="background:#e2e8f0;color:#334155">Vessel Master &middot; 1.2, 1.9</span> <span class="kpi-pill" style="background:#e2e8f0;color:#334155">Chief Officer &middot; 1.4, 1.12</span> <span class="kpi-pill" style="background:#e2e8f0;color:#334155">Cargo Planner &middot; 1.4</span> <span class="kpi-pill" style="background:#e2e8f0;color:#334155">Port Captain &middot; 1.5, 1.11</span> <span class="kpi-pill" style="background:#e2e8f0;color:#334155">Customs Broker &middot; 1.8</span></div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+  <div id="lightbox"><img id="lightboxImg" src="" alt=""></div>
+  <script src="../../../assets/js/wiki.js"></script>
+</body>
+</html>
