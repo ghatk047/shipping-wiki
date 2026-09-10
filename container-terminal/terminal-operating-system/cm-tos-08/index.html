@@ -615,7 +615,7 @@
           <span class="pid-badge org-badge-ops">CM</span>
           CM-TOS-08 &mdash; Terminal KPI Reporting for Crane Moves Per Hour and Dwell Time
         </h1>
-        <p>This process involves the collection, analysis, and reporting of key performance indicators (KPIs) related to crane moves per hour and dwell time at Maersk terminals. It ensures operational efficiency and compliance with industry standards.</p>
+        <p>This process involves collecting and analyzing data from various terminal operations to report on crane moves per hour and dwell time, which are critical KPIs for optimizing terminal efficiency.</p>
       </div>
 
       <div class="card">
@@ -640,9 +640,9 @@
             <tr><th>L1 Domain</th><td>Container &amp; Terminal Management</td></tr>
             <tr><th>L2 Process Group</th><td>Terminal Operating System Operations</td></tr>
             <tr><th>L3 Name</th><td>Terminal KPI Reporting for Crane Moves Per Hour and Dwell Time</td></tr>
-            <tr><th>Trigger</th><td>Daily terminal operations start</td></tr>
-            <tr><th>Outcome</th><td>Generation of daily KPI reports for crane moves per hour and dwell time, providing insights for continuous improvement and decision-making.</td></tr>
-            <tr><th>Systems</th><td><span class="sys-tag navis-n4">Navis N4</span> <span class="sys-tag sap">SAP S/4HANA</span> <span class="sys-tag powerbi">Power BI</span> <span class="sys-tag custom">Microsoft Teams</span></td></tr>
+            <tr><th>Trigger</th><td>Daily end-of-shift reporting by the Terminal Operating System (TOS) team.</td></tr>
+            <tr><th>Outcome</th><td>A comprehensive report detailing crane moves per hour and dwell time, along with actionable insights for improving terminal operations.</td></tr>
+            <tr><th>Systems</th><td><span class="sys-tag navis-n4">Navis N4</span> <span class="sys-tag sap">SAP S/4HANA</span> <span class="sys-tag powerbi">Microsoft Power BI</span> <span class="sys-tag salesforce">Salesforce CRM</span></td></tr>
           </table>
         </div>
       </div>
@@ -665,154 +665,142 @@
           <td>Data Collection from Navis N4 TOS</td>
           <td>Port Captain</td>
           <td><span class="sys-tag navis-n4">Navis N4</span></td>
-          <td>Terminal operations data</td>
-          <td>Raw KPI data</td>
+          <td>Terminal operation logs</td>
+          <td>Crane move data and dwell time records</td>
           <td>Crane moves per hour above 30</td>
-          <td>Inaccurate data entry leading to incorrect KPI calculations</td>
+          <td>Inaccurate data entry leading to incorrect KPI reporting.</td>
           <td>N</td>
           <td><span class="exception-y">Y</span></td>
         </tr>
         <tr>
           <td class="step-num">1.2</td>
-          <td>Data Validation and Cleaning</td>
-          <td>Cargo Planner</td>
-          <td><span class="sys-tag sap">SAP S/4HANA</span></td>
-          <td>Raw KPI data</td>
-          <td>Cleaned KPI data</td>
-          <td>VGM filing compliance 100 percent</td>
-          <td>Missing or incomplete data causing delays in reporting</td>
-          <td><span class="decision-y">Y</span></td>
-          <td>N</td>
-        </tr>
-        <tr>
-          <td class="step-num">1.3</td>
-          <td>KPI Calculation</td>
+          <td>Data Integration with SAP S/4HANA</td>
           <td>Operations Manager</td>
           <td><span class="sys-tag sap">SAP S/4HANA</span></td>
-          <td>Cleaned KPI data</td>
-          <td>Calculated KPIs</td>
-          <td>Crane moves per hour above 30</td>
-          <td>Calculation errors leading to misleading reports</td>
+          <td>Crane move data and dwell time records from Navis N4</td>
+          <td>Integrated terminal operation report</td>
+          <td>VGM filing compliance 100 percent</td>
+          <td>Data synchronization issues between systems causing delays.</td>
           <td>N</td>
           <td><span class="exception-y">Y</span></td>
         </tr>
         <tr>
+          <td class="step-num">1.3</td>
+          <td>KPI Calculation and Analysis</td>
+          <td>Freight Coordinator</td>
+          <td><span class="sys-tag powerbi">Microsoft Power BI</span></td>
+          <td>Integrated terminal operation report from SAP S/4HANA</td>
+          <td>KPI analysis report</td>
+          <td>Crane moves per hour above 30, Dwell time below 24 hours</td>
+          <td>Complex data analysis leading to potential errors.</td>
+          <td><span class="decision-y">Y</span></td>
+          <td>N</td>
+        </tr>
+        <tr>
           <td class="step-num">1.4</td>
-          <td>KPI Reporting Generation</td>
+          <td>Review and Validation of KPIs</td>
           <td>Trade Lane Manager</td>
-          <td><span class="sys-tag powerbi">Power BI</span></td>
-          <td>Calculated KPIs</td>
-          <td>Daily KPI report</td>
-          <td>Dwell time below 24 hours</td>
-          <td>Late reporting affecting strategic decision-making</td>
+          <td><span class="sys-tag sap">SAP S/4HANA</span></td>
+          <td>KPI analysis report from Power BI</td>
+          <td>Validated KPI report</td>
+          <td>Crane moves per hour above 30, Dwell time below 24 hours</td>
+          <td>Discrepancies in KPI data requiring manual validation.</td>
           <td><span class="decision-y">Y</span></td>
           <td>N</td>
         </tr>
         <tr>
           <td class="step-num">1.5</td>
-          <td>Review and Approval of KPI Report</td>
-          <td>Port Captain</td>
-          <td><span class="sys-tag powerbi">Power BI</span></td>
-          <td>Daily KPI report</td>
-          <td>Approved KPI report</td>
+          <td>Exception Handling for Crane Moves Per Hour</td>
+          <td>Chief Officer</td>
+          <td><span class="sys-tag navis-n4">Navis N4</span></td>
+          <td>Validated KPI report from SAP S/4HANA</td>
+          <td>Action plan for improving crane moves per hour</td>
           <td>Crane moves per hour above 30</td>
-          <td>Discrepancies in reported data requiring investigation</td>
+          <td>Low crane efficiency impacting terminal throughput.</td>
           <td><span class="decision-y">Y</span></td>
           <td><span class="exception-y">Y</span></td>
         </tr>
         <tr>
           <td class="step-num">1.6</td>
-          <td>Distribution of KPI Report</td>
-          <td>Operations Manager</td>
-          <td><span class="sys-tag powerbi">Power BI</span></td>
-          <td>Approved KPI report</td>
-          <td>Distributed KPI reports</td>
-          <td>VGM filing compliance 100 percent</td>
-          <td>Non-delivery of reports to relevant stakeholders</td>
-          <td>N</td>
-          <td><span class="exception-y">Y</span></td>
-        </tr>
-        <tr>
-          <td class="step-num">2.1</td>
-          <td>Anomaly Detection and Investigation</td>
-          <td>Freight Coordinator</td>
+          <td>Exception Handling for Dwell Time</td>
+          <td>Cargo Planner</td>
           <td><span class="sys-tag navis-n4">Navis N4</span></td>
-          <td>Approved KPI report</td>
-          <td>Investigation findings</td>
-          <td>Crane moves per hour above 30</td>
-          <td>Undetected anomalies affecting terminal efficiency</td>
-          <td><span class="decision-y">Y</span></td>
-          <td>N</td>
-        </tr>
-        <tr>
-          <td class="step-num">2.2</td>
-          <td>Root Cause Analysis</td>
-          <td>Claims Handler</td>
-          <td><span class="sys-tag sap">SAP S/4HANA</span></td>
-          <td>Investigation findings</td>
-          <td>Root cause analysis report</td>
+          <td>Validated KPI report from SAP S/4HANA</td>
+          <td>Action plan for reducing dwell time</td>
           <td>Dwell time below 24 hours</td>
-          <td>Complex root causes requiring extensive investigation</td>
+          <td>Long dwell times causing vessel delays.</td>
           <td><span class="decision-y">Y</span></td>
           <td><span class="exception-y">Y</span></td>
         </tr>
         <tr>
-          <td class="step-num">2.3</td>
-          <td>Action Plan Development</td>
-          <td>Operations Manager</td>
-          <td><span class="sys-tag sap">SAP S/4HANA</span></td>
-          <td>Root cause analysis report</td>
-          <td>Action plan</td>
-          <td>Crane moves per hour above 30</td>
-          <td>Insufficient resources for implementing action plans</td>
-          <td>N</td>
-          <td><span class="exception-y">Y</span></td>
-        </tr>
-        <tr>
-          <td class="step-num">2.4</td>
-          <td>Action Plan Execution</td>
+          <td class="step-num">1.7</td>
+          <td>Implementation of Action Plans</td>
           <td>Port Captain</td>
           <td><span class="sys-tag navis-n4">Navis N4</span></td>
-          <td>Action plan</td>
-          <td>Execution status</td>
-          <td>VGM filing compliance 100 percent</td>
-          <td>Non-compliance with action plans leading to continued inefficiencies</td>
-          <td><span class="decision-y">Y</span></td>
+          <td>Action plans for improving crane moves per hour and reducing dwell time</td>
+          <td>Updated terminal operation protocols</td>
+          <td>Crane moves per hour above 30, Dwell time below 24 hours</td>
+          <td>Resistance to change in operational procedures.</td>
           <td>N</td>
-        </tr>
-        <tr>
-          <td class="step-num">3.1</td>
-          <td>KPI Monitoring and Adjustment</td>
-          <td>Cargo Planner</td>
-          <td><span class="sys-tag sap">SAP S/4HANA</span></td>
-          <td>Execution status</td>
-          <td>Adjusted KPIs</td>
-          <td>Crane moves per hour above 30</td>
-          <td>Ineffective adjustments resulting in persistent performance issues</td>
-          <td><span class="decision-y">Y</span></td>
           <td><span class="exception-y">Y</span></td>
         </tr>
         <tr>
-          <td class="step-num">3.2</td>
-          <td>Performance Review Meeting</td>
-          <td>Trade Lane Manager</td>
-          <td><span class="sys-tag custom">Microsoft Teams</span></td>
-          <td>Adjusted KPIs</td>
-          <td>Meeting minutes</td>
-          <td>Dwell time below 24 hours</td>
-          <td>Lack of participation from key stakeholders affecting decision-making</td>
+          <td class="step-num">1.8</td>
+          <td>Monitoring and Reporting of Action Plan Outcomes</td>
+          <td>Operations Manager</td>
+          <td><span class="sys-tag sap">SAP S/4HANA, Microsoft Power BI</span></td>
+          <td>Updated terminal operation protocols from Navis N4</td>
+          <td>Outcome report on action plan implementation</td>
+          <td>Crane moves per hour above 30, Dwell time below 24 hours</td>
+          <td>Difficulty in measuring the impact of implemented changes.</td>
           <td><span class="decision-y">Y</span></td>
           <td>N</td>
         </tr>
         <tr>
-          <td class="step-num">3.3</td>
+          <td class="step-num">1.9</td>
+          <td>Review and Adjustment of Action Plans</td>
+          <td>Trade Lane Manager</td>
+          <td><span class="sys-tag sap">SAP S/4HANA, Microsoft Power BI</span></td>
+          <td>Outcome report on action plan implementation from Power BI</td>
+          <td>Adjusted terminal operation protocols</td>
+          <td>Crane moves per hour above 30, Dwell time below 24 hours</td>
+          <td>Need for continuous improvement in operational efficiency.</td>
+          <td><span class="decision-y">Y</span></td>
+          <td>N</td>
+        </tr>
+        <tr>
+          <td class="step-num">1.10</td>
+          <td>Final Reporting to Stakeholders</td>
+          <td>Port Captain</td>
+          <td><span class="sys-tag salesforce">Microsoft Power BI, Salesforce CRM</span></td>
+          <td>Adjusted terminal operation protocols from SAP S/4HANA</td>
+          <td>Stakeholder report on terminal KPIs and action plan outcomes</td>
+          <td>Crane moves per hour above 30, Dwell time below 24 hours</td>
+          <td>Miscommunication of complex operational data to stakeholders.</td>
+          <td>N</td>
+          <td><span class="exception-y">Y</span></td>
+        </tr>
+        <tr>
+          <td class="step-num">1.11</td>
           <td>Continuous Improvement Planning</td>
           <td>Operations Manager</td>
-          <td><span class="sys-tag sap">SAP S/4HANA</span></td>
-          <td>Meeting minutes</td>
-          <td>Continuous improvement plan</td>
-          <td>Crane moves per hour above 30</td>
-          <td>Resource constraints limiting the scope of continuous improvements</td>
+          <td><span class="sys-tag sap">SAP S/4HANA, Microsoft Power BI</span></td>
+          <td>Stakeholder report on terminal KPIs and action plan outcomes from Salesforce CRM</td>
+          <td>Continuous improvement plan for terminal operations</td>
+          <td>Crane moves per hour above 30, Dwell time below 24 hours</td>
+          <td>Lack of long-term strategic planning for operational improvements.</td>
+          <td><span class="decision-y">Y</span></td>
+          <td>N</td>
+        </tr>
+        <tr>
+          <td class="step-num">1.12</td>
+          <td>Implementation of Continuous Improvement Plan</td>
+          <td>Port Captain</td>
+          <td><span class="sys-tag navis-n4">Navis N4, SAP S/4HANA</span></td>
+          <td>Continuous improvement plan from SAP S/4HANA</td>
+          <td>Updated terminal operation protocols and processes</td>
+          <td>Crane moves per hour above 30, Dwell time below 24 hours</td>
+          <td>Resistance to change in established operational procedures.</td>
           <td>N</td>
           <td><span class="exception-y">Y</span></td>
         </tr>
@@ -826,10 +814,10 @@
         <div class="card-header">&#x1F4CA; KPIs &amp; Risk Register</div>
         <div class="card-body">
           <p class="mb-8"><strong>KPIs</strong></p>
-          <div class="kpi-list mb-8"><span class="kpi-pill">Crane moves per hour above 30</span> <span class="kpi-pill">Dwell time below 24 hours</span> <span class="kpi-pill">VGM filing compliance 100 percent</span> <span class="kpi-pill">Cargo handling efficiency improvement</span> <span class="kpi-pill">Resource utilization optimization</span> <span class="kpi-pill">Operational cost reduction</span></div>
+          <div class="kpi-list mb-8"><span class="kpi-pill">Crane moves per hour above 30</span> <span class="kpi-pill">Dwell time below 24 hours</span> <span class="kpi-pill">VGM filing compliance 100 percent</span> <span class="kpi-pill">Container stowage efficiency above 95 percent</span> <span class="kpi-pill">Customs clearance time below 48 hours</span></div>
           <p class="mb-8" style="margin-top:16px"><strong>Key Risks</strong></p>
-          <div class="kpi-list"><span class="risk-pill">Hazmat misdeclaration causing vessel fire risk</span> <span class="risk-pill">Inaccurate data entry leading to incorrect KPI calculations</span> <span class="risk-pill">Non-compliance with action plans leading to continued inefficiencies</span> <span class="risk-pill">Lack of participation from key stakeholders affecting decision-making</span> <span class="risk-pill">Resource constraints limiting the scope of continuous improvements</span></div>
-          <p class="mb-8" style="margin-top:16px"><strong>Swim Lanes</strong></p><div class="kpi-list"><span class="kpi-pill" style="background:#e2e8f0;color:#334155">Port Captain &middot; 1.1, 1.5, 2.4</span> <span class="kpi-pill" style="background:#e2e8f0;color:#334155">Cargo Planner &middot; 1.2, 2.1, 3.1</span> <span class="kpi-pill" style="background:#e2e8f0;color:#334155">Operations Manager &middot; 1.3, 2.3, 3.3</span> <span class="kpi-pill" style="background:#e2e8f0;color:#334155">Trade Lane Manager &middot; 1.4, 3.2</span></div>
+          <div class="kpi-list"><span class="risk-pill">Hazmat misdeclaration causing vessel fire risk</span> <span class="risk-pill">Data synchronization issues between systems</span> <span class="risk-pill">Resistance to change in operational procedures</span> <span class="risk-pill">Miscommunication of complex operational data to stakeholders</span> <span class="risk-pill">Lack of long-term strategic planning for operational improvements</span></div>
+          <p class="mb-8" style="margin-top:16px"><strong>Swim Lanes</strong></p><div class="kpi-list"><span class="kpi-pill" style="background:#e2e8f0;color:#334155">Port Captain &middot; 1.1, 1.4, 1.6, 1.7, 1.9, 1.10, 1.12</span> <span class="kpi-pill" style="background:#e2e8f0;color:#334155">Operations Manager &middot; 1.2, 1.3, 1.8, 1.11</span> <span class="kpi-pill" style="background:#e2e8f0;color:#334155">Freight Coordinator &middot; 1.3, 1.4, 1.6, 1.9, 1.10, 1.12</span> <span class="kpi-pill" style="background:#e2e8f0;color:#334155">Trade Lane Manager &middot; 1.5, 1.8, 1.11</span> <span class="kpi-pill" style="background:#e2e8f0;color:#334155">Chief Officer &middot; 1.2, 1.4, 1.6, 1.9, 1.10, 1.12</span></div>
         </div>
       </div>
 
