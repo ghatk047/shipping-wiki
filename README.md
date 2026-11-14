@@ -45,7 +45,7 @@ A process ID is `<L1>-<L2>-<NN>`, for example `VO-NP-01` (Vessel Operations, Voy
 
 ```
 <l1-folder>/<l2-folder>/<pid>/index.html     e.g. vessel-operations/voyage-planning/vo-np-01/index.html
-assets/img/<pid>.svg                          the process diagram
+assets/img/<pid>.svg                          the process diagram (VO-NP-01 uses a .png instead)
 ```
 
 Each process page shows a short description, the BPMN flow diagram (click to zoom and pan), process attributes (ID, domain family, L1/L2/L3 names, trigger, outcome, systems), and the L4 step table (step, name, role, system, input, output, KPI, pain point, decision?, exception?).
@@ -61,7 +61,7 @@ Each process page shows a short description, the BPMN flow diagram (click to zoo
 ├── assets/
 │   ├── css/wiki.css                 Styles
 │   ├── js/wiki.js                   Sidebar collapse, search, diagram lightbox (zoom/pan)
-│   └── img/                         <pid>.svg for all 300 processes (+ vo-np-01.png, ea-03.png/.svg)
+│   └── img/                         <pid>.svg for 299 processes, vo-np-01.png for the pilot, ea-03.png/.svg
 ├── <l1-folder>/                     16 domain folders (table above)
 │   ├── index.html                   Domain page
 │   └── <l2-folder>/
@@ -83,7 +83,7 @@ Not in the repo by design: the generator keeps a local working tree with `data/`
 ## How it works
 
 1. The taxonomy (16 L1, 37 L2, 300 processes, with names) lives in the `TAXONOMY` list in `scripts/generate_shipping_wiki.py`. It is the authoritative list of what should exist.
-2. For each process the generator prompts a local Ollama model (primary `qwen2.5-coder:14b`, fallback `qwen2.5:latest`, server `http://localhost:11434`) for the L4 content, sanitises the Mermaid it returns, and renders it with `mmdc` to SVG (`assets/img/<pid>.svg`).
+2. For each process the generator prompts a local Ollama model (primary `qwen2.5-coder:14b`, fallback `qwen2.5:latest`, server `http://localhost:11434`) for the L4 content, sanitises the Mermaid it returns, and renders it with `mmdc` to SVG (`assets/img/<pid>.svg`; the generator code renders SVG, while the pilot VO-NP-01 diagram in the repo is a PNG).
 3. It builds the process page plus the domain, L2 and home index pages, a sidebar, and `search-index.json`.
 4. Files are **pushed straight to `main` through the GitHub Contents API** (not with `git push`), using a token from the `GITHUB_TOKEN` environment variable. The token is never stored in the repo.
 5. A `.deploy` file is rewritten, which triggers a GitHub Pages rebuild; unless `--no-verify` is given the generator waits about 90 seconds and checks the live page.
@@ -123,7 +123,7 @@ There is no build step for viewing: the repo root is the site. Any static file s
 **Done**
 
 - All 300 process pages exist and are linked from the domain and L2 indexes (verified against the taxonomy: 37/37 L2 groups complete).
-- 300 process diagrams (`assets/img/<pid>.svg`).
+- 300 process diagrams: 299 SVGs (`assets/img/<pid>.svg`) plus a PNG for the pilot process VO-NP-01.
 - Home, domain and L2 index pages, sidebar navigation, search page and search index.
 - EA-03 (Terminal Operations Architecture) is published.
 
